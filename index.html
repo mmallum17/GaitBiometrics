@@ -7,21 +7,12 @@
 		body {
 			font-family: helvetica, arial, sans serif;
 		}
-		#sphere {
-			position: absolute;
-			width: 50px;
-			height: 50px;
-			border-radius: 50px;
-			-webkit-radius: 50px;
-			background-color: blue;
-		}
 	</style>
 </head>
 
 <body>
 <div id="content">
 	<h1>Accelerometer Javascript Test</h1>
-	<div id="sphere"></div>
 	<ul>
 		<li>acceleration x: <span id="accelerationX"></span>g</li>
 		<li>acceleration y: <span id="accelerationY"></span>g</li>
@@ -39,12 +30,10 @@
         vx = 0, vy = 0,
         ax = 0, ay = 0;
 
-    var sphere = document.getElementById("sphere");
-
     if (window.DeviceMotionEvent != undefined) {
-        window.ondevicemotion = function(e) {
-            ax = event.accelerationIncludingGravity.x * 5;
-            ay = event.accelerationIncludingGravity.y * 5;
+        window.ondevicemotion = function (e) {
+			/*ax = event.accelerationIncludingGravity.x * 5;
+            ay = event.accelerationIncludingGravity.y * 5;*/
             document.getElementById("accelerationX").innerHTML = e.accelerationIncludingGravity.x;
             document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y;
             document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z;
@@ -54,9 +43,10 @@
                 document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta;
                 document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma;
             }
-        }
+		}
+	}
 
-        setInterval( function() {
+/*        setInterval( function() {
             var landscapeOrientation = window.innerWidth/window.innerHeight > 1;
             if ( landscapeOrientation) {
                 vx = vx + ay;
@@ -72,9 +62,6 @@
 
             boundingBoxCheck();
 
-            sphere.style.top = y + "px";
-            sphere.style.left = x + "px";
-
         }, 25);
     }
 
@@ -85,7 +72,7 @@
         if (x>document.documentElement.clientWidth-20) { x = document.documentElement.clientWidth-20; vx = -vx; }
         if (y>document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = -vy; }
 
-    }
+    }*/
 
 </script>
 
