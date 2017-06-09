@@ -1,5 +1,4 @@
 <?php
-//    header( 'Location: /index.html' ) ;
 
 function pg_connection_string_from_database_url() {
     $user = "fnfgduxoqaonjm";
