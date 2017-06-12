@@ -11,7 +11,7 @@ function pg_connection_string_from_database_url() {
 
 # Here we establish the connection. Yes, that's all.
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
-$acc = json_decode($_GET['accJSON']);
+$acc = json_decode($_GET['acc']);
 # Now let's use the connection for something silly just to prove it works:
 $result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
 /*print "<pre>\n";
