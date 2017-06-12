@@ -15,12 +15,12 @@
 <div id="content">
     <h1 style="color:#212F3D;">Accelerometer Javascript Test!</h1>
     <ul>
-        <li>acceleration: <span id="accelerationX"></span></li>
-        <!--<li>acceleration y: <span id="accelerationY"></span></li>-->
-        <!--<li>acceleration z: <span id="accelerationZ"></span></li>-->
-        <!--<li>rotation alpha: <span id="rotationAlpha"></span></li>-->
-        <!--<li>rotation beta: <span id="rotationBeta"></span></li>-->
-        <!--<li>rotation gamma: <span id="rotationGamma"></span></li>-->
+        <li>acceleration x: <span id="accelerationX"></span></li>
+        <li>acceleration y: <span id="accelerationY"></span></li>
+        <li>acceleration z: <span id="accelerationZ"></span></li>
+        <li>rotation alpha: <span id="rotationAlpha"></span></li>
+        <li>rotation beta: <span id="rotationBeta"></span></li>
+        <li>rotation gamma: <span id="rotationGamma"></span></li>
     </ul>
 </div>
 <script type="text/javascript">
@@ -57,7 +57,7 @@
              document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta.toFixed(5);
              document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(5);
              }*/
-            xmlhttp.open("GET","getuser.php?acc="+accJSON,true);
+            xmlhttp.open("GET","database.php?acc="+accJSON,true);
             xmlhttp.send();
         }
     }
