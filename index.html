@@ -32,15 +32,32 @@
         window.ondevicemotion = function (e) {
 			/*ax = event.accelerationIncludingGravity.x * 5;
             ay = event.accelerationIncludingGravity.y * 5;*/
-            document.getElementById("accelerationX").innerHTML = e.accelerationIncludingGravity.x.toFixed(5);
-            document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y.toFixed(5);
-            document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z.toFixed(5);
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            };
 
-            if ( e.rotationRate ) {
+            var accArray = [e.accelerationIncludingGravity.x, e.accelerationIncludingGravity.y, e.accelerationIncludingGravity.z];
+            var accJSON = JSON.stringify(accArray);
+            document.getElementById("accelerationX").innerHTML = accJSON;
+            //document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y.toFixed(5);
+            //document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z.toFixed(5);
+
+            /*if ( e.rotationRate ) {
                 document.getElementById("rotationAlpha").innerHTML = e.rotationRate.alpha.toFixed(5);
                 document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta.toFixed(5);
                 document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(5);
-            }
+            }*/
+            xmlhttp.open("GET","getuser.php?acc="+accJSON,true);
+            xmlhttp.send();
 		}
 	}
 
