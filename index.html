@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Accelerometer Javascript Test</title>
-	<meta name="viewport" content="width=device-width,user-scalable=yes" />
-	<style>
-		body {
-			font-family: helvetica, arial, sans serif;
-		}
-	</style>
+    <title>Accelerometer Javascript Test</title>
+    <meta name="viewport" content="width=device-width,user-scalable=yes" />
+    <style>
+        body {
+            font-family: helvetica, arial, sans serif;
+        }
+    </style>
 </head>
 
 <body>
 <div id="content">
-	<h1>Accelerometer Javascript Test</h1>
-	<ul>
-		<li>acceleration x: <span id="accelerationX"></span></li>
-		<li>acceleration y: <span id="accelerationY"></span></li>
-		<li>acceleration z: <span id="accelerationZ"></span></li>
-		<li>rotation alpha: <span id="rotationAlpha"></span></li>
-		<li>rotation beta: <span id="rotationBeta"></span></li>
-		<li>rotation gamma: <span id="rotationGamma"></span></li>
-	</ul>
+    <h1>Accelerometer Javascript Test</h1>
+    <ul>
+        <li>acceleration x: <span id="accelerationX"></span></li>
+        <li>acceleration y: <span id="accelerationY"></span></li>
+        <li>acceleration z: <span id="accelerationZ"></span></li>
+        <li>rotation alpha: <span id="rotationAlpha"></span></li>
+        <li>rotation beta: <span id="rotationBeta"></span></li>
+        <li>rotation gamma: <span id="rotationGamma"></span></li>
+    </ul>
 </div>
 <script type="text/javascript">
 
     var x = 0, y = 0,
-        vx = 0, vy = 0,
-        ax = 0, ay = 0;
+            vx = 0, vy = 0,
+            ax = 0, ay = 0;
 
     if (window.DeviceMotionEvent != undefined) {
         window.ondevicemotion = function (e) {
-			/*ax = event.accelerationIncludingGravity.x * 5;
-            ay = event.accelerationIncludingGravity.y * 5;*/
+            /*ax = event.accelerationIncludingGravity.x * 5;
+             ay = event.accelerationIncludingGravity.y * 5;*/
             if (window.XMLHttpRequest) {
                 // code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp = new XMLHttpRequest();
@@ -52,44 +52,45 @@
             //document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z.toFixed(5);
 
             /*if ( e.rotationRate ) {
-                document.getElementById("rotationAlpha").innerHTML = e.rotationRate.alpha.toFixed(5);
-                document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta.toFixed(5);
-                document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(5);
-            }*/
-            xmlhttp.open("GET","getuser.php?acc="+accJSON,true);
+             document.getElementById("rotationAlpha").innerHTML = e.rotationRate.alpha.toFixed(5);
+             document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta.toFixed(5);
+             document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(5);
+             }*/
+            xmlhttp.open("GET","database.php?acc="+accJSON,true);
             xmlhttp.send();
-		}
-	}
-
-/*        setInterval( function() {
-            var landscapeOrientation = window.innerWidth/window.innerHeight > 1;
-            if ( landscapeOrientation) {
-                vx = vx + ay;
-                vy = vy + ax;
-            } else {
-                vy = vy - ay;
-                vx = vx + ax;
-            }
-            vx = vx * 0.98;
-            vy = vy * 0.98;
-            y = parseInt(y + vy / 50);
-            x = parseInt(x + vx / 50);
-
-            boundingBoxCheck();
-
-        }, 25);
+        }
     }
 
+    /*        setInterval( function() {
+     var landscapeOrientation = window.innerWidth/window.innerHeight > 1;
+     if ( landscapeOrientation) {
+     vx = vx + ay;
+     vy = vy + ax;
+     } else {
+     vy = vy - ay;
+     vx = vx + ax;
+     }
+     vx = vx * 0.98;
+     vy = vy * 0.98;
+     y = parseInt(y + vy / 50);
+     x = parseInt(x + vx / 50);
 
-    function boundingBoxCheck(){
-        if (x<0) { x = 0; vx = -vx; }
-        if (y<0) { y = 0; vy = -vy; }
-        if (x>document.documentElement.clientWidth-20) { x = document.documentElement.clientWidth-20; vx = -vx; }
-        if (y>document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = -vy; }
+     boundingBoxCheck();
 
-    }*/
+     }, 25);
+     }
+
+
+     function boundingBoxCheck(){
+     if (x<0) { x = 0; vx = -vx; }
+     if (y<0) { y = 0; vy = -vy; }
+     if (x>document.documentElement.clientWidth-20) { x = document.documentElement.clientWidth-20; vx = -vx; }
+     if (y>document.documentElement.clientHeight-20) { y = document.documentElement.clientHeight-20; vy = -vy; }
+
+     }*/
 
 </script>
+
 
 </body>
 </html>
