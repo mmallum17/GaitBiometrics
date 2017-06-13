@@ -18,8 +18,14 @@ $z = $_GET['z'];
 # Now let's use the connection for something silly just to prove it works:
 //$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
 
-$query = "INSERT INTO accelerometer (x, y, z) VALUES ($x, $y, $z)";
+$query = "INSERT INTO accelerometer(x, y, z) VALUES($x, $y, $z)";
 $result = pg_query($pg_conn, $query);
+if (!$result) {
+    $errormessage = pg_last_error();
+    echo "Error with query: " . $errormessage;
+    print "<h2>ERROR</h2>";
+    exit();
+}
 
 /*print "<pre>\n";
 if (!pg_num_rows($result)) {

@@ -1,6 +1,6 @@
 <?php
 
-function pg_connection_string_from_database_url() {
+/*function pg_connection_string_from_database_url() {
     $user = "fnfgduxoqaonjm";
     $pass = "3a5ef4d082610ea1f9f88d557ae503cb2cb7d5dd5eb97f5c9c0c23a7c0ddf15a";
     $host = "ec2-23-21-220-48.compute-1.amazonaws.com";
@@ -21,6 +21,6 @@ if (!$result) {
     print "<h1>ERROR</h1>";
     exit();
 }
-print "<h1>TEST<h1/>";
-//    header( 'Location: /index.html' ) ;
+print "<h1>TEST<h1/>";*/
+    header( 'Location: /index.html' ) ;
 ?>

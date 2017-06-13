@@ -18,6 +18,7 @@
         <li>acceleration x: <span id="accelerationX"></span></li>
         <li>acceleration y: <span id="accelerationY"></span></li>
         <li>acceleration z: <span id="accelerationZ"></span></li>
+        <li>Message: <span id="message"></span></li>
         <!--<li>rotation alpha: <span id="rotationAlpha"></span></li>-->
         <!--<li>rotation beta: <span id="rotationBeta"></span></li>-->
         <!--<li>rotation gamma: <span id="rotationGamma"></span></li>-->
@@ -42,7 +43,7 @@
             }
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    //document.getElementById("txtHint").innerHTML = this.responseText;
+                    document.getElementById("message").innerHTML = this.responseText;
                 }
             };
 
