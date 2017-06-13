@@ -17,7 +17,10 @@ $y = $_GET['y'];
 $z = $_GET['z'];
 # Now let's use the connection for something silly just to prove it works:
 //$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
-$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ($x, $y, $z");
+
+$query = "INSERT INTO accelerometer (x, y, z) VALUES ($x, $y, $z)";
+$result = pg_query($pg_conn, $query);
+
 /*print "<pre>\n";
 if (!pg_num_rows($result)) {
     print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
