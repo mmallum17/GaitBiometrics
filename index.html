@@ -16,8 +16,8 @@
     <h1 style="color:#212F3D;">Accelerometer Javascript Test!</h1>
     <ul>
         <li>acceleration x: <span id="accelerationX"></span></li>
-        <!--<li>acceleration y: <span id="accelerationY"></span></li>-->
-        <!--<li>acceleration z: <span id="accelerationZ"></span></li>-->
+        <li>acceleration y: <span id="accelerationY"></span></li>
+        <li>acceleration z: <span id="accelerationZ"></span></li>
         <!--<li>rotation alpha: <span id="rotationAlpha"></span></li>-->
         <!--<li>rotation beta: <span id="rotationBeta"></span></li>-->
         <!--<li>rotation gamma: <span id="rotationGamma"></span></li>-->
@@ -48,15 +48,15 @@
 
             var accX = e.accelerationIncludingGravity.x;
 //            var accJSONX = JSON.stringify(accArrayX);
-//            document.getElementById("accelerationX").innerHTML = accJSON;
+            document.getElementById("accelerationX").innerHTML = accX;
 
             var accY = e.accelerationIncludingGravity.y;
 //            var accJSONY = JSON.stringify(accArrayY);
-//            document.getElementById("accelerationX").innerHTML = accJSON;
+            document.getElementById("accelerationY").innerHTML = accY;
 
             var accZ = e.accelerationIncludingGravity.z;
 //            var accJSONZ = JSON.stringify(accArray);
-//            document.getElementById("accelerationX").innerHTML = accJSON;
+            document.getElementById("accelerationZ").innerHTML = accZ;
 
             //document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y.toFixed(5);
             //document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z.toFixed(5);
