@@ -13,7 +13,8 @@ function pg_connection_string_from_database_url() {
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 $acc = json_decode($_GET['acc']);
 # Now let's use the connection for something silly just to prove it works:
-$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
+//$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
+$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES (1,2,3)");
 /*print "<pre>\n";
 if (!pg_num_rows($result)) {
     print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
