@@ -27,6 +27,17 @@ if (!$result) {
     exit();
 }
 
+//Gyroscope
+
+$alpha = $_GET['alpha'];
+$beta = $_GET['beta'];
+$gamma = $_GET['gamma'];
+
+
+$query = "INSERT INTO gyroscope (alpha, bete, gamma) VALUES ($alpha, $beta, $gamma)";
+$result = pg_query($pg_conn, $query);
+
+
 /*print "<pre>\n";
 if (!pg_num_rows($result)) {
     print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");

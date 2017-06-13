@@ -18,10 +18,9 @@
         <li>acceleration x: <span id="accelerationX"></span></li>
         <li>acceleration y: <span id="accelerationY"></span></li>
         <li>acceleration z: <span id="accelerationZ"></span></li>
-        <li>Message: <span id="message"></span></li>
-        <!--<li>rotation alpha: <span id="rotationAlpha"></span></li>-->
-        <!--<li>rotation beta: <span id="rotationBeta"></span></li>-->
-        <!--<li>rotation gamma: <span id="rotationGamma"></span></li>-->
+        <li>rotation x: <span id="rotationGyrX"></span></li>
+        <li>rotation y: <span id="rotationGyrY"></span></li>
+        <li>rotation z: <span id="rotationGyrZ"></span></li>
     </ul>
 </div>
 <script type="text/javascript">
@@ -46,7 +45,7 @@
                     document.getElementById("message").innerHTML = this.responseText;
                 }
             };
-
+//Accelerometer
             var accX = e.accelerationIncludingGravity.x;
 //            var accJSONX = JSON.stringify(accArrayX);
             document.getElementById("accelerationX").innerHTML = accX;
@@ -59,6 +58,20 @@
 //            var accJSONZ = JSON.stringify(accArray);
             document.getElementById("accelerationZ").innerHTML = accZ;
 
+//Gyroscope
+            var alpha = e.rotationRate.alpha;
+            document.getElementById("rotationGyrX").innerHTML = alpha;
+
+            var beta = e.rotationRate.beta;
+            document.getElementById("rotationGyrY").innerHTML = beta;
+
+            var gamma = e.rotationRate.gamma;
+            document.getElementById("rotationGyrZ").innerHTML = gamma;
+
+
+
+
+
             //document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y.toFixed(5);
             //document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z.toFixed(5);
 
@@ -67,7 +80,12 @@
              document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta.toFixed(5);
              document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(5);
              }*/
+
+
             xmlhttp.open("GET","database.php?x="+accX+"&y="+accY+"&z="+accZ,true);
+
+            xmlhttp.open("GET","database.php?alpha="+alpha+"&beta="+beta+"&gamma="+gamma,true);
+
             xmlhttp.send();
         }
     }
