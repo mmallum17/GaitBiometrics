@@ -3,7 +3,7 @@
 <head>
 
     <title style="color:#212F3D;"> Accelerometer Javascript Test!</title>
-    <meta name="viewport" content="width=device-width,user-scalable=yes" />
+    <meta name="viewport" content="width=device-width,user-scalable=yes"/>
     <style>
         body {
             font-family: helvetica, arial, sans serif;
@@ -18,7 +18,7 @@
         <li>acceleration x: <span id="accelerationX"></span></li>
         <li>acceleration y: <span id="accelerationY"></span></li>
         <li>acceleration z: <span id="accelerationZ"></span></li>
-        
+
         <li>rotation x: <span id="rotationAlpha"></span></li>
         <li>rotation y: <span id="rotationBeta"></span></li>
         <li>rotation z: <span id="rotationGamma"></span></li>
@@ -43,7 +43,7 @@
                 // code for IE6, IE5
                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
-            xmlhttp.onreadystatechange = function() {
+            xmlhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("message").innerHTML = this.responseText;
                 }
@@ -61,6 +61,28 @@
 //            var accJSONZ = JSON.stringify(accArray);
             document.getElementById("accelerationZ").innerHTML = accZ;
 
+            xmlhttp.open("GET", "database.php?x=" + accX + "&y=" + accY + "&z=" + accZ, true);
+            xmlhttp.send();
+        }
+    }
+
+    if (window.DeviceMotionEvent != undefined) {
+        window.ondevicemotion = function (e) {
+            /*ax = event.accelerationIncludingGravity.x * 5;
+             ay = event.accelerationIncludingGravity.y * 5;*/
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("message").innerHTML = this.responseText;
+                }
+            };
+
 //Gyroscope
             var alpha = e.rotationRate.alpha;
             document.getElementById("rotationAlpha").innerHTML = alpha;
@@ -71,8 +93,8 @@
             var gamma = e.rotationRate.gamma;
             document.getElementById("rotationGamma").innerHTML = gamma;
 
-
-
+            xmlhttp.open("GET", "database.php?alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
+            xmlhttp.send();
 
 
             //document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y.toFixed(5);
@@ -85,13 +107,9 @@
              }*/
 
 
-            xmlhttp.open("GET","database.php?x="+accX+"&y="+accY+"&z="+accZ,true);
-            xmlhttp.send();
-
-            xmlhttp.open("GET","database.php?alpha="+alpha+"&beta="+beta+"&gamma="+gamma,true);
-            xmlhttp.send();
         }
     }
+
 
 </script>
 
