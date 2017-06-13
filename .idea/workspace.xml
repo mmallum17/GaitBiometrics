@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1b104cc0-e56e-4337-a903-48559ecc0e42" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.php" afterPath="$PROJECT_DIR$/database.php" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +19,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+            <state relative-caret-position="238">
+              <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#title#0;n#head#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -33,14 +32,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            <state relative-caret-position="17">
+              <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
               <folding>
-                <marker date="1497355190234" expanded="true" signature="825:878" ph="INSERT INTO accelerometer... " />
-                <marker date="1497355190234" expanded="true" signature="1160:1233" ph="INSERT INTO gyroscope... " />
+                <marker date="1497355500718" expanded="true" signature="825:878" ph="INSERT INTO accelerometer... " />
+                <marker date="1497355500718" expanded="true" signature="1164:1235" ph="INSERT INTO gyroscope... " />
               </folding>
             </state>
           </provider>
@@ -67,7 +66,7 @@
     </option>
     <push-targets>
       <push-target-info repo="$PROJECT_DIR$" source="herokumaster" target-remote="heroku" target-branch="master" />
-      <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="github" target-branch="master" />
+      <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="heroku" target-branch="master" />
     </push-targets>
   </component>
   <component name="GradleLocalSettings">
@@ -78,9 +77,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/database.php" />
       </list>
     </option>
   </component>
@@ -689,7 +688,7 @@
       <workItem from="1496926214992" duration="297000" />
       <workItem from="1496928307301" duration="10763000" />
       <workItem from="1497258863058" duration="11437000" />
-      <workItem from="1497347663647" duration="7485000" />
+      <workItem from="1497347663647" duration="7770000" />
     </task>
     <task id="LOCAL-00001" summary="Accelerometer/Gyroscope Test">
       <created>1496926287942</created>
@@ -824,11 +823,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497353317983</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Gyroscope Test">
+      <created>1497355238114</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1497355238114</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29982000" />
+    <option name="totallyTimeSpent" value="30267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -873,10 +879,19 @@
     <MESSAGE value="DB Update" />
     <MESSAGE value="Test Insert to Database" />
     <MESSAGE value="Test Insert Accelerometer to DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Insert Accelerometer to DB" />
+    <MESSAGE value="Gyroscope Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gyroscope Test" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/database.php</url>
+          <line>22</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -900,8 +915,8 @@
         <state relative-caret-position="272">
           <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
           <folding>
-            <marker date="1497355190234" expanded="true" signature="825:878" ph="INSERT INTO accelerometer... " />
-            <marker date="1497355190234" expanded="true" signature="1160:1233" ph="INSERT INTO gyroscope... " />
+            <marker date="1497355500718" expanded="true" signature="825:878" ph="INSERT INTO accelerometer... " />
+            <marker date="1497355500718" expanded="true" signature="1164:1235" ph="INSERT INTO gyroscope... " />
           </folding>
         </state>
       </provider>
@@ -938,8 +953,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1497355190234" expanded="true" signature="825:878" ph="INSERT INTO accelerometer... " />
-            <marker date="1497355190234" expanded="true" signature="1160:1233" ph="INSERT INTO gyroscope... " />
+            <marker date="1497355500718" expanded="true" signature="825:878" ph="INSERT INTO accelerometer... " />
+            <marker date="1497355500718" expanded="true" signature="1164:1235" ph="INSERT INTO gyroscope... " />
           </folding>
         </state>
       </provider>
@@ -971,24 +986,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database.php">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        <state relative-caret-position="238">
+          <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
           <folding>
-            <marker date="1497355190234" expanded="true" signature="825:878" ph="INSERT INTO accelerometer... " />
-            <marker date="1497355190234" expanded="true" signature="1160:1233" ph="INSERT INTO gyroscope... " />
+            <element signature="n#style#0;n#title#0;n#head#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        <state relative-caret-position="17">
+          <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
           <folding>
-            <element signature="n#style#0;n#title#0;n#head#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1497355500718" expanded="true" signature="825:878" ph="INSERT INTO accelerometer... " />
+            <marker date="1497355500718" expanded="true" signature="1164:1235" ph="INSERT INTO gyroscope... " />
           </folding>
         </state>
       </provider>

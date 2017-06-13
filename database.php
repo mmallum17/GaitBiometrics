@@ -23,7 +23,7 @@ $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
     echo "Error with query: " . $errormessage;
-    print "<h2>ERROR</h2>";
+    print "<h2>ACC ERROR</h2>";
     exit();
 }
 
@@ -34,8 +34,14 @@ $beta = $_GET['beta'];
 $gamma = $_GET['gamma'];
 
 
-$query = "INSERT INTO gyroscope (alpha, bete, gamma) VALUES ($alpha, $beta, $gamma)";
+$query = "INSERT INTO gyroscope(alpha, beta, gamma) VALUES($alpha, $beta, $gamma)";
 $result = pg_query($pg_conn, $query);
+if (!$result) {
+    $errormessage = pg_last_error();
+    echo "Error with query: " . $errormessage;
+    print "<h2>GYR ERROR</h2>";
+    exit();
+}
 
 
 /*print "<pre>\n";
