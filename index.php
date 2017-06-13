@@ -13,7 +13,7 @@ function pg_connection_string_from_database_url() {
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 # Now let's use the connection for something silly just to prove it works:
 //$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
-$query = "INSERT INTO accelerometer(x, y, z) VALUES('1','2','3')";
+$query = "INSERT INTO accelerometer(x, y, z) VALUES(1, 2, 3)";
 $result = pg_query($pg_conn, $query);
 print "<h1>TEST<h1/>"
 //    header( 'Location: /index.html' ) ;
