@@ -18,9 +18,11 @@
         <li>acceleration x: <span id="accelerationX"></span></li>
         <li>acceleration y: <span id="accelerationY"></span></li>
         <li>acceleration z: <span id="accelerationZ"></span></li>
-        <li>rotation x: <span id="rotationGyrX"></span></li>
-        <li>rotation y: <span id="rotationGyrY"></span></li>
-        <li>rotation z: <span id="rotationGyrZ"></span></li>
+        
+        <li>rotation x: <span id="rotationAlpha"></span></li>
+        <li>rotation y: <span id="rotationBeta"></span></li>
+        <li>rotation z: <span id="rotationGamma"></span></li>
+
         <li>Message: <span id="message"></span></li>
     </ul>
 </div>
@@ -61,13 +63,13 @@
 
 //Gyroscope
             var alpha = e.rotationRate.alpha;
-            document.getElementById("rotationGyrX").innerHTML = alpha;
+            document.getElementById("rotationAlpha").innerHTML = alpha;
 
             var beta = e.rotationRate.beta;
-            document.getElementById("rotationGyrY").innerHTML = beta;
+            document.getElementById("rotationBeta").innerHTML = beta;
 
             var gamma = e.rotationRate.gamma;
-            document.getElementById("rotationGyrZ").innerHTML = gamma;
+            document.getElementById("rotationGamma").innerHTML = gamma;
 
 
 

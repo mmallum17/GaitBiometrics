@@ -12,6 +12,8 @@ function pg_connection_string_from_database_url() {
 # Here we establish the connection. Yes, that's all.
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 #$accX = json_decode($_GET['acc']);
+
+//Accelerometer
 $x = $_GET['x'];
 $y = $_GET['y'];
 $z = $_GET['z'];
