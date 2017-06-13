@@ -46,9 +46,18 @@
                 }
             };
 
-            var accArray = [e.accelerationIncludingGravity.x, e.accelerationIncludingGravity.y, e.accelerationIncludingGravity.z];
-            var accJSON = JSON.stringify(accArray);
-            document.getElementById("accelerationX").innerHTML = accJSON;
+            var accX = e.accelerationIncludingGravity.x;
+//            var accJSONX = JSON.stringify(accArrayX);
+//            document.getElementById("accelerationX").innerHTML = accJSON;
+
+            var accY = e.accelerationIncludingGravity.y;
+//            var accJSONY = JSON.stringify(accArrayY);
+//            document.getElementById("accelerationX").innerHTML = accJSON;
+
+            var accZ = e.accelerationIncludingGravity.z;
+//            var accJSONZ = JSON.stringify(accArray);
+//            document.getElementById("accelerationX").innerHTML = accJSON;
+
             //document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y.toFixed(5);
             //document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z.toFixed(5);
 
@@ -57,7 +66,7 @@
              document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta.toFixed(5);
              document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(5);
              }*/
-            xmlhttp.open("GET","database.php?acc="+accJSON,true);
+            xmlhttp.open("GET","database.php?x="+accX+"&y="+accY+"&z="+accZ,true);
             xmlhttp.send();
         }
     }
