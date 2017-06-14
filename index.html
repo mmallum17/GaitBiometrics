@@ -23,14 +23,19 @@
         <li>rotation y: <span id="rotationBeta"></span></li>
         <li>rotation z: <span id="rotationGamma"></span></li>
 
-        <li>Message: <span id="message"></span></li>
+        <li>Message: <span id="messageAcc"></span></li>
+
+        <li>Alpha: <span id="alpha"></span></li>
+        <li>Beta: <span id="beta"></span></li>
+        <li>Gamma: <span id=gamma"></span></li>
+
+        <li>Message: <span id="messageGyr"></span></li>
+
     </ul>
 </div>
 <script type="text/javascript">
 
-    var x = 0, y = 0,
-            vx = 0, vy = 0,
-            ax = 0, ay = 0;
+    var x = 0, y = 0;
 
     if (window.DeviceMotionEvent != undefined) {
         window.ondevicemotion = function (e) {
@@ -38,14 +43,14 @@
              ay = event.accelerationIncludingGravity.y * 5;*/
             if (window.XMLHttpRequest) {
                 // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
+                xmlhttpAcc = new XMLHttpRequest();
             } else {
                 // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                xmlhttpAcc = new ActiveXObject("Microsoft.XMLHTTP");
             }
-            xmlhttp.onreadystatechange = function() {
+            xmlhttpAcc.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("message").innerHTML = this.responseText;
+                    document.getElementById("messageAcc").innerHTML = this.responseText;
                 }
             };
 //Accelerometer
@@ -85,8 +90,8 @@
              }*/
 
 
-            xmlhttp.open("GET","database.php?x="+accX+"&y="+accY+"&z="+accZ+"&alpha="+alpha+"&beta="+beta+"&gamma="+gamma,true);
-            xmlhttp.send();
+            xmlhttpAcc.open("GET","databaseAcc.php?x="+accX+"&y="+accY+"&z="+accZ+"&alpha="+alpha+"&beta="+beta+"&gamma="+gamma,true);
+            xmlhttpAcc.send();
 
             //xmlhttp.open("GET","database.php?alpha="+alpha+"&beta="+beta+"&gamma="+gamma,true);
             //xmlhttp.send();
@@ -94,16 +99,32 @@
     }
 
     if (window.DeviceOrientationEvent) {
-        window.addEventListener('deviceorientation', function(eventData) {
-            // gamma is the left-to-right tilt in degrees
-            console.log(eventData.gamma);
+        window.ondeviceorientation = function(event) {
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttpGyr = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttpGyr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttpGyr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("messageGyr").innerHTML = this.responseText;
+                }
+            };
 
-            // beta is the front-to-back tilt in degrees
-            console.log(eventData.beta);
+            var alpha = event.alpha;
+            document.getElementById("alpha").innerHTML = alpha;
 
-            // alpha is the compass direction the device is facing in degrees
-            console.log(eventData.alpha);
-        }, false);
+            var beta = event.beta;
+            document.getElementById("beta").innerHTML = beta;
+
+            var gamma = event.gamma;
+            document.getElementById("gamma").innerHTML = gamma;
+
+            xmlhttpGyr.open("GET","databaseGyr.php?alpha="+alpha+"&beta="+beta+"&gamma="+gamma,true);
+            xmlhttpGyr.send();
+        }
     }
 
 </script>
