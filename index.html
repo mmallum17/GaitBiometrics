@@ -93,6 +93,19 @@
         }
     }
 
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', function(eventData) {
+            // gamma is the left-to-right tilt in degrees
+            console.log(eventData.gamma);
+
+            // beta is the front-to-back tilt in degrees
+            console.log(eventData.beta);
+
+            // alpha is the compass direction the device is facing in degrees
+            console.log(eventData.alpha);
+        }, false);
+    }
+
 </script>
 
 

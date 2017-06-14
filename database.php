@@ -30,11 +30,9 @@ if (!$result) {
 }
 
 //Gyroscope
-
 $alpha = $_GET['alpha'];
 $beta = $_GET['beta'];
 $gamma = $_GET['gamma'];
-
 
 $query = "INSERT INTO gyroscope(alpha, beta, gamma) VALUES($alpha, $beta, $gamma)";
 $result = pg_query($pg_conn, $query);
