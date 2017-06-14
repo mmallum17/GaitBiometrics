@@ -34,7 +34,7 @@ $alpha = $_GET['alpha'];
 $beta = $_GET['beta'];
 $gamma = $_GET['gamma'];
 
-$query = "INSERT INTO gyroscopeGravity(alpha, beta, gamma) VALUES($alpha, $beta, $gamma)";
+$query = "INSERT INTO gyroscope_gravity(alpha, beta, gamma) VALUES($alpha, $beta, $gamma)";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
