@@ -25,7 +25,7 @@ $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
     echo "Error with query: " . $errormessage;
-    print "<h2>ACC ERROR</h2>";
+    print "<h2>ACC-acc ERROR</h2>";
     exit();
 }
 
@@ -39,7 +39,7 @@ $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
     echo "Error with query: " . $errormessage;
-    print "<h2>GYR ERROR</h2>";
+    print "<h2>ACC-gyr ERROR</h2>";
     exit();
 }
 
