@@ -85,6 +85,7 @@
 
         <div id="content">
             <ul>
+                <li>Seconds Left: <span id="countdown"></span></li>
                 <!--Accelerometer-->
                 <li>acceleration x: <span id="accelerationX"></span></li>
                 <li>acceleration y: <span id="accelerationY"></span></li>
@@ -101,7 +102,6 @@
                 <li>GN Message: <span id="messageGN"></span></li>
                 <li>Acc Message: <span id="messageAcc"></span></li>
                 <li>Gyr Message: <span id="messageGyr"></span></li>
-                <li>Seconds Left: <span id="countdown"></span></li>
             </ul>
 
             <a class="btn btn-primary btn-xl" href="End.html">Finish</a>
@@ -166,12 +166,12 @@
             are not supported by the browser or device*/
         });
 
-        var countdown = 30;
+        var countdown = 10;
         // Update the count down every 1 second
         var x = setInterval(function() {
             countdown--;
             // Display the result in the element with id="demo"
-            document.getElementById("countdown").innerHTML = countdown + "s ";
+            document.getElementById("countdown").innerHTML = countdown + " s";
 
             // If the count down is finished, write some text
             if (countdown < 0) {
