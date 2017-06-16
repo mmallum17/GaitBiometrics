@@ -65,9 +65,7 @@
     </div>
 </nav>
 <script>
-    var firstname = "First name*:";
-    var age = "Age*:";
-    var weight = "Weight*:";
+
 </script>
 
 
@@ -75,22 +73,23 @@
     <div class="header-content">
         <div class="header-content-inner">
             <form action="../form.php" id="form1" method="post">
-                <h2>User Information:</h2> <br>
-               First Name*: <br><input type="text" name="FirstName" required><br>
-                Age*: <br> <input type="number" name="Age" required><br>
-                Weight* (lbs): <br> <input type="number" name="Weight" required><br>
-                Height* (ft): <br> <input type="number" name="Height"  required><br>
-                Gender*:<br>
-                <input type="radio" name="gender"  value="male" checked> Male<br>
-                <input type="radio" name="gender" value="female"> Female<br>
-</form>
-</div>
+                <h2> Where you place your phone during the test?*:</h2><br>
+                <input type="radio" name="position"  value="RightHand"> Right Hand<br>
+                <input type="radio" name="position"  value="LeftHand"> Left Hand<br>
+                <input type="radio" name="position"  value="RFrontP"> Right Front Pocket<br>
+                <input type="radio" name="position"  value="LFrontP"> Left Front Pocket<br>
+                <input type="radio" name="position"  value="RBackP"> Right Back Pocket<br>
+                <input type="radio" name="position"  value="LBackP"> Left Back Pocket<br>
+
+
+            </form>
+        </div>
 
         <br>
-        <button type="submit" class="btn btn-primary btn-xl" form="form1" href="App.html" value="Submit">Submit</button>
+        <button type="submit" class="btn btn-primary btn-xl" form="form1" href="App.html" value="Submit">Done</button>
         <!--<a class="btn btn-primary btn-xl" href="App.html">Submit</a>-->
 
-        </div>
+    </div>
     </div>
 </header>
 
