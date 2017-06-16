@@ -1,4 +1,5 @@
 <?php
+//$uniqid()
 header( 'Location: /LayoutApp/App.html' ) ;
 function pg_connection_string_from_database_url() {
     $user = "fnfgduxoqaonjm";
