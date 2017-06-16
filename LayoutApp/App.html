@@ -117,7 +117,7 @@
             window.ondevicemotion = function (e) {
                 /*ax = event.accelerationIncludingGravity.x * 5;
                  ay = event.accelerationIncludingGravity.y * 5;*/
-                if (window.XMLHttpRequest) {
+                /*if (window.XMLHttpRequest) {
                     // code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttpAcc = new XMLHttpRequest();
                 } else {
@@ -128,7 +128,7 @@
                     if (this.readyState == 4 && this.status == 200) {
                         document.getElementById("messageAcc").innerHTML = this.responseText;
                     }
-                };
+                };*/
 //Accelerometer
                 var accX = e.accelerationIncludingGravity.x;
 //            var accJSONX = JSON.stringify(accArrayX);
@@ -153,15 +153,15 @@
                 document.getElementById("rotationGamma").innerHTML = gamma;
 
 
-                xmlhttpAcc.open("GET", "../databaseAcc.php?x=" + accX + "&y=" + accY + "&z=" + accZ + "&alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
-                xmlhttpAcc.send();
+                /*xmlhttpAcc.open("GET", "../databaseAcc.php?x=" + accX + "&y=" + accY + "&z=" + accZ + "&alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
+                xmlhttpAcc.send();*/
 
             }
         }
 
-        /*if (window.DeviceOrientationEvent) {
+        if (window.DeviceOrientationEvent) {
             window.ondeviceorientation = function (event) {
-                if (window.XMLHttpRequest) {
+                /*if (window.XMLHttpRequest) {
                     // code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttpGyr = new XMLHttpRequest();
                 } else {
@@ -173,7 +173,7 @@
                         document.getElementById("messageGyr").innerHTML = this.responseText;
                     }
                 };
-
+*/
                 var alpha = event.alpha;
                 document.getElementById("alpha").innerHTML = alpha;
 
@@ -183,10 +183,10 @@
                 var gamma = event.gamma;
                 document.getElementById("gamma").innerHTML = gamma;
 
-                xmlhttpGyr.open("GET", "databaseGyr.php?alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
-                xmlhttpGyr.send();
+                /*xmlhttpGyr.open("GET", "databaseGyr.php?alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
+                xmlhttpGyr.send();*/
             }
-        }*/
+        }
 
     </script>
 
