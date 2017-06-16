@@ -28,6 +28,9 @@ if (!$result) {
     print "<h2>ACC-acc ERROR</h2>";
     exit();
 }
+else{
+    print "<h2>No error</h2>";
+}
 
 //Gyroscope
 $alpha = $_GET['alpha'];
@@ -41,6 +44,9 @@ if (!$result) {
     echo "Error with query: " . $errormessage;
     print "<h2>ACC-gyr ERROR</h2>";
     exit();
+}
+else{
+    print "<h2>No error</h2>";
 }
 
 
