@@ -84,7 +84,7 @@
         </div>
 
         <br>
-        <button type="submit" class="btn btn-primary btn-xl" href="App.html" value="Submit">Start</button>
+        <a type="submit" class="btn btn-primary btn-xl" href="App.html">Start</a>
         <!--<a class="btn btn-primary btn-xl" href="App.html">Submit</a>-->
 
     </div>
@@ -94,21 +94,6 @@
 
 <script>
 
-    if (window.XMLHttpRequest) {
-// code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
-    } else {
-// code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("messageAcc").innerHTML = this.responseText;
-        }
-    };
-    xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri, true);
-    xmlhttp.send();
-    });
 
 
 </script>
