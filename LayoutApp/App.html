@@ -177,7 +177,7 @@
             if (countdown <= 0) {
                 clearInterval(x);
                 if ("vibrate" in navigator) {
-                    navigator.vibrate(1000);
+                    navigator.vibrate(5000);
                 }
                 //document.getElementById("countdown").innerHTML = "EXPIRED";
                 window.location.href = 'End.html';
