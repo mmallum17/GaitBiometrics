@@ -18,12 +18,11 @@ $weight = $_POST["Weight"];
 $height = $_POST["Height"];
 $gender = $_POST["gender"];
 
-$query = "INSERT INTO user(name, age, weight, height, gender) VALUES($name, $age, $weight, $height, $gender)";
+$query = "INSERT INTO user_info(name, age, weight, height, gender) VALUES($name, $age, $weight, $height, $gender)";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
     echo "Error with query: " . $errormessage;
-    print "<h2>ACC-acc ERROR</h2>";
     exit();
 }
 ?>
