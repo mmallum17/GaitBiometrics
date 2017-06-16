@@ -98,8 +98,9 @@
                 <li>Beta: <span id="beta"></span></li>
                 <li>Gamma: <span id="gamma"></span></li>
 
-                <li>Message: <span id="messageAcc"></span></li>
-                <li>Message: <span id="messageGyr"></span></li>
+                <li>GN Message: <span id="messageGN"></span></li>
+                <li>Acc Message: <span id="messageAcc"></span></li>
+                <li>Gyr Message: <span id="messageGyr"></span></li>
             </ul>
 
             <a class="btn btn-primary btn-xl" href="End.html">Finish</a>
@@ -134,6 +135,21 @@
                 document.getElementById("rotationBeta").innerHTML = betaAcc;
                 var gammaAcc  = data.dm.gamma;
                 document.getElementById("rotationGamma").innerHTML = gammaAcc;
+
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("messageAcc").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri, true);
+                xmlhttp.send();
             });
         }).catch(function(e){
             document.getElementById("messageAcc").innerHTML = "NOT COMPATIBLE";

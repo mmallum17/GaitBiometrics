@@ -14,9 +14,9 @@ $pg_conn = pg_connect(pg_connection_string_from_database_url());
 #$accX = json_decode($_GET['acc']);
 
 //Accelerometer
-$x = $_GET['x'];
-$y = $_GET['y'];
-$z = $_GET['z'];
+$x = $_GET['accX'];
+$y = $_GET['accY'];
+$z = $_GET['accZ'];
 # Now let's use the connection for something silly just to prove it works:
 //$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
 
@@ -32,10 +32,10 @@ else{
     print "<h2>No error</h2>";
 }
 
-//Gyroscope
-$alpha = $_GET['alpha'];
-$beta = $_GET['beta'];
-$gamma = $_GET['gamma'];
+//GyroscopeAcc
+$alpha = $_GET['alphaAcc'];
+$beta = $_GET['betaAcc'];
+$gamma = $_GET['gammaAcc'];
 
 $query = "INSERT INTO gyroscope_gravity(alpha, beta, gamma) VALUES($alpha, $beta, $gamma)";
 $result = pg_query($pg_conn, $query);
@@ -49,7 +49,22 @@ else{
     print "<h2>No error</h2>";
 }
 
+//GyroscopeOri
+$alpha = $_GET['alphaOri'];
+$beta = $_GET['betaOri'];
+$gamma = $_GET['gammaOri'];
 
+$query = "INSERT INTO gyroscope(alpha, beta, gamma) VALUES($alpha, $beta, $gamma)";
+$result = pg_query($pg_conn, $query);
+if (!$result) {
+    $errormessage = pg_last_error();
+    echo "Error with query: " . $errormessage;
+    print "<h2>GYRO ERROR</h2>";
+    exit();
+}
+else{
+    print "<h2>No error</h2>";
+}
 /*print "<pre>\n";
 if (!pg_num_rows($result)) {
     print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
