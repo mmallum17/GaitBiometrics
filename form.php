@@ -20,7 +20,7 @@ $gender = $_POST["gender"];
 
 print $name . " " . $age . " " . $weight . " " . $height . " " . $gender;
 
-$query = "INSERT INTO user_info(age, weight, height, gender) VALUES($age, $weight, $height, $gender)";
+$query = "INSERT INTO user_info(age, weight, height) VALUES($age, $weight, $height)";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
