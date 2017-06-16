@@ -94,9 +94,9 @@
                 <li>rotation y: <span id="rotationBeta"></span></li>
                 <li>rotation z: <span id="rotationGamma"></span></li>
                 <!--Gyroscope#2-->
-                <li>Alpha: <span id="alpha"></span></li>
+                <!--<li>Alpha: <span id="alpha"></span></li>
                 <li>Beta: <span id="beta"></span></li>
-                <li>Gamma: <span id="gamma"></span></li>
+                <li>Gamma: <span id="gamma"></span></li>-->
 
                 <li>Message: <span id="messageAcc"></span></li>
                 <li>Message: <span id="messageGyr"></span></li>
@@ -159,7 +159,7 @@
             }
         }
 
-        if (window.DeviceOrientationEvent) {
+        /*if (window.DeviceOrientationEvent) {
             window.ondeviceorientation = function (event) {
                 if (window.XMLHttpRequest) {
                     // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -186,7 +186,7 @@
                 xmlhttpGyr.open("GET", "databaseGyr.php?alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
                 xmlhttpGyr.send();
             }
-        }
+        }*/
 
     </script>
 
