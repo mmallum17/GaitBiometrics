@@ -178,6 +178,10 @@
                 clearInterval(x);
                 if ("vibrate" in navigator) {
                     navigator.vibrate(5000);
+                    setTimeout(function(){
+                        window.location.href = 'End.html';
+
+                    },5000);
                 }
                 //document.getElementById("countdown").innerHTML = "EXPIRED";
                 window.location.href = 'End.html';
