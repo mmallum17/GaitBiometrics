@@ -25,4 +25,5 @@ if (!$result) {
     echo "Error with query: " . $errormessage;
     exit();
 }
+print $name . " " . $age . " " . $weight . " " . $height . " " . $gender;
 ?>
