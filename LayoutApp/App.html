@@ -109,15 +109,44 @@
 </header>
 </body>
 
+    <script src="../gyronorm.complete.min.js"></script>
     <script type="text/javascript">
+        var gn = new GyroNorm();
+        gn.init().then(function(){
+            gn.start(function(data){
+                var alphaOri = data.do.alpha;
+                document.getElementById("alpha").innerHTML = alphaOri;
+                var betaOri = data.do.beta;
+                document.getElementById("beta").innerHTML = betaOri;
+                var gammaOri = data.do.gamma;
+                document.getElementById("gamma").innerHTML = gammaOri;
 
-        var x = 0, y = 0;
+                var accX = data.dm.x;
+                document.getElementById("accelerationX").innerHTML = accX;
+                var accY = data.dm.y;
+                document.getElementById("accelerationY").innerHTML = accY;
+                var accZ = data.dm.z;
+                document.getElementById("accelerationZ").innerHTML = accZ;
+
+                var alphaAcc = data.dm.alpha;
+                document.getElementById("rotationAlpha").innerHTML = alphaAcc;
+                var betaAcc = data.dm.beta;
+                document.getElementById("rotationBeta").innerHTML = betaAcc;
+                var gammaAcc  = data.dm.gamma;
+                document.getElementById("rotationGamma").innerHTML = gammaAcc;
+            });
+        }).catch(function(e){
+            document.getElementById("messageAcc").innerHTML = "NOT COMPATIBLE";
+            /*Catch if the DeviceOrientation or DeviceMotion events
+            are not supported by the browser or device*/
+        });
+        /*var x = 0, y = 0;
 
         if (window.DeviceMotionEvent != undefined) {
             window.ondevicemotion = function (e) {
-                /*ax = event.accelerationIncludingGravity.x * 5;
-                 ay = event.accelerationIncludingGravity.y * 5;*/
-                /*if (window.XMLHttpRequest) {
+                /!*ax = event.accelerationIncludingGravity.x * 5;
+                 ay = event.accelerationIncludingGravity.y * 5;*!/
+                /!*if (window.XMLHttpRequest) {
                     // code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttpAcc = new XMLHttpRequest();
                 } else {
@@ -128,7 +157,7 @@
                     if (this.readyState == 4 && this.status == 200) {
                         document.getElementById("messageAcc").innerHTML = this.responseText;
                     }
-                };*/
+                };*!/
 //Accelerometer
                 var accX = e.accelerationIncludingGravity.x;
 //            var accJSONX = JSON.stringify(accArrayX);
@@ -153,15 +182,15 @@
                 document.getElementById("rotationGamma").innerHTML = gamma;
 
 
-                /*xmlhttpAcc.open("GET", "../databaseAcc.php?x=" + accX + "&y=" + accY + "&z=" + accZ + "&alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
-                xmlhttpAcc.send();*/
+                /!*xmlhttpAcc.open("GET", "../databaseAcc.php?x=" + accX + "&y=" + accY + "&z=" + accZ + "&alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
+                xmlhttpAcc.send();*!/
 
             }
         }
 
         if (window.DeviceOrientationEvent) {
             window.ondeviceorientation = function (event) {
-                /*if (window.XMLHttpRequest) {
+                /!*if (window.XMLHttpRequest) {
                     // code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttpGyr = new XMLHttpRequest();
                 } else {
@@ -173,7 +202,7 @@
                         document.getElementById("messageGyr").innerHTML = this.responseText;
                     }
                 };
-*/
+*!/
                 var alpha = event.alpha;
                 document.getElementById("alpha").innerHTML = alpha;
 
@@ -183,10 +212,10 @@
                 var gamma = event.gamma;
                 document.getElementById("gamma").innerHTML = gamma;
 
-                /*xmlhttpGyr.open("GET", "databaseGyr.php?alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
-                xmlhttpGyr.send();*/
+                /!*xmlhttpGyr.open("GET", "databaseGyr.php?alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
+                xmlhttpGyr.send();*!/
             }
-        }
+        }*/
 
     </script>
 
