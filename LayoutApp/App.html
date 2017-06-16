@@ -174,7 +174,7 @@
             document.getElementById("countdown").innerHTML = countdown + " s";
 
             // If the count down is finished, write some text
-            if (countdown < 0) {
+            if (countdown <= 0) {
                 clearInterval(x);
                 //document.getElementById("countdown").innerHTML = "EXPIRED";
                 window.location.href = 'End.html';
