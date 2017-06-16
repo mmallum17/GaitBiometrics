@@ -112,8 +112,16 @@
 
     <script src="../gyronorm.complete.min.js"></script>
     <script type="text/javascript">
+        var args = {
+            frequency:50,
+            gravityNormalized:true,
+            orientationBase:GyroNorm.GAME,
+            decimalCount:8,
+            logger:null,
+            screenAdjusted:false
+        };
         var gn = new GyroNorm();
-        gn.init().then(function(){
+        gn.init(args).then(function(){
             gn.start(function(data){
                 var alphaOri = data.do.alpha;
                 document.getElementById("alpha").innerHTML = alphaOri;
