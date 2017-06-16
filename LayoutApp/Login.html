@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<span title="Spanish"><a lang="es" href="qa-html-language-declarations.es">Español</a></span>
 
 <head>
 
@@ -39,7 +40,10 @@
 
 </head>
 
+
+
 <body id="page-top">
+
 
 <!-- Navigation -->
 <nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
@@ -60,13 +64,19 @@
         </div>
     </div>
 </nav>
+<script>
+    var firstname = "First name*:";
+    var age = "Age*:";
+    var weight = "Weight*:";
+</script>
+
 
 <header class="masthead">
     <div class="header-content">
         <div class="header-content-inner">
             <form action="App.html" id="form1">
                 <h2>User Information:</h2> <br>
-                First name*: <br><input type="text" name="FirstName" required><br>
+               First Name*: <br><input type="text" name="FirstName" required><br>
                 Age*: <br> <input type="number" name="Age" required><br>
                 Weight*: <br> <input type="number" name="Weight" required><br>
                 Height*: <br> <input type="number" name="Height"  required><br>
@@ -84,6 +94,11 @@
     </div>
 </header>
 
+<div id="google_translate_element"></div><script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 <!-- Bootstrap core JavaScript -->
