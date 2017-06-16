@@ -176,7 +176,8 @@
             // If the count down is finished, write some text
             if (countdown < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "EXPIRED";
+                //document.getElementById("countdown").innerHTML = "EXPIRED";
+                window.location.href = 'End.html';
             }
         }, 1000);
         /*var x = 0, y = 0;
