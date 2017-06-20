@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Biometrics App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+    <!-- Temporary navbar container fix -->
+    <style>
+        .navbar-toggler {
+            z-index: 1;
+        }
+
+        @media (max-width: 576px) {
+            nav > .container {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">Biometrics App</a>
+
+        <div class="collapse navbar-collapse" id="navbarExample">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <section>
+        <h1 style="color:#F05F40;
+    border-width: 3px;
+  border-color: #F05F40; ">Where is the user?</h1>
+
+    </section>
+</header>
+<h1 id="demo">demo</h1>
+</body>
+
+
+
+<script type="text/javascript">
+    var demo = document.getElementById("demo");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            demo.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position) {
+        demo.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+    }
+    getLocation();
+</script>
+
+
+<script src="../gyronorm.complete.min.js"></script>
+<script type="text/javascript">
+    var args = {
+        frequency:50,
+        gravityNormalized:true,
+        orientationBase:GyroNorm.GAME,
+        decimalCount:8,
+        logger:null,
+        screenAdjusted:false
+    };
+    var gn = new GyroNorm();
+    gn.init(args).then(function(){
+        gn.start(function(data){
+            var alphaOri = data.do.alpha;
+            //document.getElementById("alpha").innerHTML = alphaOri;
+            var betaOri = data.do.beta;
+            //document.getElementById("beta").innerHTML = betaOri;
+            var gammaOri = data.do.gamma;
+            //document.getElementById("gamma").innerHTML = gammaOri;
+
+            var accX = data.dm.gx;
+            //document.getElementById("accelerationX").innerHTML = accX;
+            var accY = data.dm.gy;
+            //document.getElementById("accelerationY").innerHTML = accY;
+            var accZ = data.dm.gz;
+            //document.getElementById("accelerationZ").innerHTML = accZ;
+
+            var alphaAcc = data.dm.alpha;
+            //document.getElementById("rotationAlpha").innerHTML = alphaAcc;
+            var betaAcc = data.dm.beta;
+            //document.getElementById("rotationBeta").innerHTML = betaAcc;
+            var gammaAcc  = data.dm.gamma;
+            //document.getElementById("rotationGamma").innerHTML = gammaAcc;
+
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    //document.getElementById("messageAcc").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri, true);
+            xmlhttp.send();
+        });
+    }).catch(function(e){
+        document.getElementById("messageGN").innerHTML = "NOT COMPATIBLE";
+        /*Catch if the DeviceOrientation or DeviceMotion events
+         are not supported by the browser or device*/
+    });
+
+    var countdown = 10;
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+        countdown--;
+        // Display the result in the element with id="demo"
+        document.getElementById("countdown").innerHTML = countdown + " s";
+
+        // If the count down is finished, write some text
+        if (countdown <= 0) {
+            clearInterval(x);
+            if ("vibrate" in navigator) {
+                navigator.vibrate(5000);
+                setTimeout(function(){
+                    window.location.href = 'Position.html';
+
+                },5000);
+            }
+            //document.getElementById("countdown").innerHTML = "EXPIRED";
+            //window.location.href = 'End.html';
+        }
+    }, 1000);
+    /*var x = 0, y = 0;
+
+     if (window.DeviceMotionEvent != undefined) {
+     window.ondevicemotion = function (e) {
+     /!*ax = event.accelerationIncludingGravity.x * 5;
+     ay = event.accelerationIncludingGravity.y * 5;*!/
+     /!*if (window.XMLHttpRequest) {
+     // code for IE7+, Firefox, Chrome, Opera, Safari
+     xmlhttpAcc = new XMLHttpRequest();
+     } else {
+     // code for IE6, IE5
+     xmlhttpAcc = new ActiveXObject("Microsoft.XMLHTTP");
+     }
+     xmlhttpAcc.onreadystatechange = function () {
+     if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("messageAcc").innerHTML = this.responseText;
+     }
+     };*!/
+     //Accelerometer
+     var accX = e.accelerationIncludingGravity.x;
+     //            var accJSONX = JSON.stringify(accArrayX);
+     document.getElementById("accelerationX").innerHTML = accX;
+
+     var accY = e.accelerationIncludingGravity.y;
+     //            var accJSONY = JSON.stringify(accArrayY);
+     document.getElementById("accelerationY").innerHTML = accY;
+
+     var accZ = e.accelerationIncludingGravity.z;
+     //            var accJSONZ = JSON.stringify(accArray);
+     document.getElementById("accelerationZ").innerHTML = accZ;
+
+     //Gyroscope
+     var alpha = e.rotationRate.alpha;
+     document.getElementById("rotationAlpha").innerHTML = alpha;
+
+     var beta = e.rotationRate.beta;
+     document.getElementById("rotationBeta").innerHTML = beta;
+
+     var gamma = e.rotationRate.gamma;
+     document.getElementById("rotationGamma").innerHTML = gamma;
+
+
+     /!*xmlhttpAcc.open("GET", "../databaseAcc.php?x=" + accX + "&y=" + accY + "&z=" + accZ + "&alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
+     xmlhttpAcc.send();*!/
+
+     }
+     }
+
+     if (window.DeviceOrientationEvent) {
+     window.ondeviceorientation = function (event) {
+     /!*if (window.XMLHttpRequest) {
+     // code for IE7+, Firefox, Chrome, Opera, Safari
+     xmlhttpGyr = new XMLHttpRequest();
+     } else {
+     // code for IE6, IE5
+     xmlhttpGyr = new ActiveXObject("Microsoft.XMLHTTP");
+     }
+     xmlhttpGyr.onreadystatechange = function () {
+     if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("messageGyr").innerHTML = this.responseText;
+     }
+     };
+     *!/
+     var alpha = event.alpha;
+     document.getElementById("alpha").innerHTML = alpha;
+
+     var beta = event.beta;
+     document.getElementById("beta").innerHTML = beta;
+
+     var gamma = event.gamma;
+     document.getElementById("gamma").innerHTML = gamma;
+
+     /!*xmlhttpGyr.open("GET", "databaseGyr.php?alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
+     xmlhttpGyr.send();*!/
+     }
+     }*/
+
+</script>
+
+
+<!--/body-->
+<!--/header-->
+
+<!--translate-->
+<div id="google_translate_element"></div><script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+    }
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/tether/tether.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/creative.min.js"></script>
+
+<!--/body-->
+
+</html>
