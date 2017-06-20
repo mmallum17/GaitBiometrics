@@ -19,7 +19,7 @@ $weight = $_POST["Weight"];
 $height = $_POST["Height"];
 $gender = $_POST["gender"];
 $userName = $_POST["UserName"];
-$password = $_POST["psw"];
+$password = $_POST["pwd1"];
 
 print $name . " " . $age . " " . $weight . " " . $height . " " . $gender;
 
