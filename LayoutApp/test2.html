@@ -108,7 +108,7 @@
             <!--<a class="btn btn-primary btn-xl" href="Position.html">Finish</a>-->
 
         <!--</div>-->
-        <h3 id="demo"></h3>
+        <!--<h3 id="demo"></h3>-->
         <h3>While walking on the sidewalk try to find Waldo ! </h3>
 
         <div class="container" role="main" id="touchscreen">
@@ -116,7 +116,7 @@
             <img class="img-responsive img-rounded" alt="Where's Waldo" src="Waldo.jpg" usemap="#mapWaldo">
 
             <map name="mapWaldo">
-                <area alt="Waldo" title="Waldo" onclick="return saveData()" href="End.html" shape="rect" coords="486,260,532,319" />
+                <area alt="Waldo" title="Waldo" href="End.html" shape="rect" coords="486,260,532,319" />
             </map>
             <!--<p id="log"></p> -->
         </div>
@@ -140,12 +140,12 @@
     };
     var gn = new GyroNorm();
 
-    var lat1;
+    /*var lat1;
     var long1;
     var demo = document.getElementById("demo");
     var successHandler = function(position) {
-        /*demo.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;*/
+        /!*demo.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;*!/
         lat1 = position.coords.latitude;
         long1 = position.coords.longitude;
     };
@@ -160,7 +160,7 @@
 
     navigator.geolocation.getCurrentPosition(
         successHandler, errorHandler,
-        {enableHighAccuracy: true, maximumAge: 10000});
+        {enableHighAccuracy: true, maximumAge: 10000});*/
 
     gn.init(args).then(function(){
         gn.start(function(data){
@@ -206,7 +206,7 @@
          are not supported by the browser or device*/
     });
 
-    var countdown = 10;
+    var countdown = 45;
     // Update the count down every 1 second
     var x = setInterval(function() {
         countdown--;
@@ -217,19 +217,19 @@
         if (countdown <= 0) {
             clearInterval(x);
             if ("vibrate" in navigator) {
-                navigator.vibrate(5000);
+                navigator.vibrate(1000);
                 setTimeout(function(){
                     window.location.href = 'Position.html';
 
-                },5000);
+                },1000);
             }
             //document.getElementById("countdown").innerHTML = "EXPIRED";
             //window.location.href = 'End.html';
         }
     }, 1000);
-    function saveData(){
+/*    function saveData(){
 
-    }
+    }*/
     /*var x = 0, y = 0;
 
      if (window.DeviceMotionEvent != undefined) {
