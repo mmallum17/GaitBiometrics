@@ -82,7 +82,7 @@
 
 <script type="text/javascript">
     var demo = document.getElementById("demo");
-   /* function getLocation() {
+    function getLocation() {
         demo.innerHTML = "made it";
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
@@ -94,8 +94,8 @@
         demo.innerHTML = "Latitude: " + position.coords.latitude +
             "<br>Longitude: " + position.coords.longitude;
     }
-    getLocation();*/
-  var successHandler = function(position) {
+    getLocation();
+  /*var successHandler = function(position) {
       demo.innerHTML = "Latitude: " + position.coords.latitude +
           "<br>Longitude: " + position.coords.longitude;
   };
@@ -110,7 +110,7 @@
 
   navigator.geolocation.watchPosition(
       successHandler, errorHandler,
-      {enableHighAccuracy: true, maximumAge: 10000});
+      {enableHighAccuracy: true, maximumAge: 10000});*/
 </script>
 
 

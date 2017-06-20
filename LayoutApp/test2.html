@@ -108,7 +108,7 @@
             <!--<a class="btn btn-primary btn-xl" href="Position.html">Finish</a>-->
 
         <!--</div>-->
-
+        <h3 id="demo"></h3>
         <h3>While walking on the sidewalk try to find Waldo ! </h3>
 
         <div class="container" role="main" id="touchscreen">
@@ -116,7 +116,7 @@
             <img class="img-responsive img-rounded" alt="Where's Waldo" src="Waldo.jpg" usemap="#mapWaldo">
 
             <map name="mapWaldo">
-                <area alt="Waldo" title="Waldo" href="End.html" shape="rect" coords="486,260,532,319" />
+                <area alt="Waldo" title="Waldo" onclick="return saveData()" href="End.html" shape="rect" coords="486,260,532,319" />
             </map>
             <!--<p id="log"></p> -->
         </div>
@@ -139,6 +139,29 @@
         screenAdjusted:false
     };
     var gn = new GyroNorm();
+
+    var lat1;
+    var long1;
+    var demo = document.getElementById("demo");
+    var successHandler = function(position) {
+        /*demo.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;*/
+        lat1 = position.coords.latitude;
+        long1 = position.coords.longitude;
+    };
+
+    var errorHandler = function (errorObj) {
+        demo.innerHTML = (errorObj.code + ": " + errorObj.message);
+
+        demo.innerHTML("something wrong take this lat " + 26.0546106 );
+        demo.innerHTML("something wrong take this lng " +-98.3939791);
+
+    };
+
+    navigator.geolocation.getCurrentPosition(
+        successHandler, errorHandler,
+        {enableHighAccuracy: true, maximumAge: 10000});
+
     gn.init(args).then(function(){
         gn.start(function(data){
             var alphaOri = data.do.alpha;
@@ -178,7 +201,7 @@
             xmlhttp.send();
         });
     }).catch(function(e){
-        document.getElementById("messageGN").innerHTML = "NOT COMPATIBLE...GET A REAL PHONE JOSE";
+        document.getElementById("messageGN").innerHTML = "NOT COMPATIBLE";
         /*Catch if the DeviceOrientation or DeviceMotion events
          are not supported by the browser or device*/
     });
@@ -204,6 +227,9 @@
             //window.location.href = 'End.html';
         }
     }, 1000);
+    function saveData(){
+
+    }
     /*var x = 0, y = 0;
 
      if (window.DeviceMotionEvent != undefined) {
