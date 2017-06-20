@@ -107,7 +107,7 @@
 
   };
 
-  navigator.geolocation.getCurrentPosition(
+  navigator.geolocation.watchPosition(
       successHandler, errorHandler,
       {enableHighAccuracy: true, maximumAge: 10000});
 </script>
