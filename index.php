@@ -1,3 +1,3 @@
 <?php
-    header( 'Location: /LayoutApp/test1.html' ) ;
+    header( 'Location: /LayoutApp/index.html' ) ;
 ?>
