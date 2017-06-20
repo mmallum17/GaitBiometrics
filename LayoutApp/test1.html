@@ -82,6 +82,10 @@
 
 <script type="text/javascript">
     var demo = document.getElementById("demo");
+    function showPosition(position) {
+        demo.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+    }
     function getLocation() {
         demo.innerHTML = "made it";
         if (navigator.geolocation) {
@@ -90,10 +94,7 @@
             demo.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
-    function showPosition(position) {
-        demo.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-    }
+
     getLocation();
   /*var successHandler = function(position) {
       demo.innerHTML = "Latitude: " + position.coords.latitude +
