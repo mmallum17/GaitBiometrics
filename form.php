@@ -13,7 +13,6 @@ function pg_connection_string_from_database_url() {
 # Here we establish the connection. Yes, that's all.
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 
-$name = $_POST["FirstName"];
 $age = $_POST["Age"];
 $weight = $_POST["Weight"];
 $height = $_POST["Height"];
@@ -21,9 +20,9 @@ $gender = $_POST["gender"];
 $userName = $_POST["UserName"];
 $password = $_POST["pwd1"];
 
-print $name . " " . $age . " " . $weight . " " . $height . " " . $gender;
+//print $name . " " . $age . " " . $weight . " " . $height . " " . $gender;
 
-$query = "INSERT INTO user_info(user_name, age, weight, height, gender, username, password) VALUES('$name', $age, $weight, $height, '$gender', '$userName', '$password')";
+$query = "INSERT INTO user_info(age, weight, height, gender, username, password) VALUES($age, $weight, $height, '$gender', '$userName', '$password')";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
