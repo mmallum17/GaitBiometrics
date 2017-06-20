@@ -75,6 +75,7 @@
     </section>
 </header>
 <h1 id="demo">demo</h1>
+<h1 id="countdown">Seconds left:</h1>
 </body>
 
 
@@ -189,82 +190,6 @@
             //window.location.href = 'End.html';
         }
     }, 1000);
-    /*var x = 0, y = 0;
-
-     if (window.DeviceMotionEvent != undefined) {
-     window.ondevicemotion = function (e) {
-     /!*ax = event.accelerationIncludingGravity.x * 5;
-     ay = event.accelerationIncludingGravity.y * 5;*!/
-     /!*if (window.XMLHttpRequest) {
-     // code for IE7+, Firefox, Chrome, Opera, Safari
-     xmlhttpAcc = new XMLHttpRequest();
-     } else {
-     // code for IE6, IE5
-     xmlhttpAcc = new ActiveXObject("Microsoft.XMLHTTP");
-     }
-     xmlhttpAcc.onreadystatechange = function () {
-     if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("messageAcc").innerHTML = this.responseText;
-     }
-     };*!/
-     //Accelerometer
-     var accX = e.accelerationIncludingGravity.x;
-     //            var accJSONX = JSON.stringify(accArrayX);
-     document.getElementById("accelerationX").innerHTML = accX;
-
-     var accY = e.accelerationIncludingGravity.y;
-     //            var accJSONY = JSON.stringify(accArrayY);
-     document.getElementById("accelerationY").innerHTML = accY;
-
-     var accZ = e.accelerationIncludingGravity.z;
-     //            var accJSONZ = JSON.stringify(accArray);
-     document.getElementById("accelerationZ").innerHTML = accZ;
-
-     //Gyroscope
-     var alpha = e.rotationRate.alpha;
-     document.getElementById("rotationAlpha").innerHTML = alpha;
-
-     var beta = e.rotationRate.beta;
-     document.getElementById("rotationBeta").innerHTML = beta;
-
-     var gamma = e.rotationRate.gamma;
-     document.getElementById("rotationGamma").innerHTML = gamma;
-
-
-     /!*xmlhttpAcc.open("GET", "../databaseAcc.php?x=" + accX + "&y=" + accY + "&z=" + accZ + "&alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
-     xmlhttpAcc.send();*!/
-
-     }
-     }
-
-     if (window.DeviceOrientationEvent) {
-     window.ondeviceorientation = function (event) {
-     /!*if (window.XMLHttpRequest) {
-     // code for IE7+, Firefox, Chrome, Opera, Safari
-     xmlhttpGyr = new XMLHttpRequest();
-     } else {
-     // code for IE6, IE5
-     xmlhttpGyr = new ActiveXObject("Microsoft.XMLHTTP");
-     }
-     xmlhttpGyr.onreadystatechange = function () {
-     if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("messageGyr").innerHTML = this.responseText;
-     }
-     };
-     *!/
-     var alpha = event.alpha;
-     document.getElementById("alpha").innerHTML = alpha;
-
-     var beta = event.beta;
-     document.getElementById("beta").innerHTML = beta;
-
-     var gamma = event.gamma;
-     document.getElementById("gamma").innerHTML = gamma;
-
-     /!*xmlhttpGyr.open("GET", "databaseGyr.php?alpha=" + alpha + "&beta=" + beta + "&gamma=" + gamma, true);
-     xmlhttpGyr.send();*!/
-     }
-     }*/
 
 </script>
 
