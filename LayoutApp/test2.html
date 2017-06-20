@@ -80,6 +80,7 @@
 <header>
     <section>
         <h1 id="countdown"></h1>
+        Message: <h1 id="messageAcc"></h1>
         <h1 style="color:#F05F40;
     border-width: 3px;
   border-color: #F05F40; ">Where is Waldo?</h1>
@@ -166,25 +167,25 @@
     gn.init(args).then(function(){
         gn.start(function(data){
             var alphaOri = data.do.alpha;
-            document.getElementById("alpha").innerHTML = alphaOri;
+            //document.getElementById("alpha").innerHTML = alphaOri;
             var betaOri = data.do.beta;
-            document.getElementById("beta").innerHTML = betaOri;
+            //document.getElementById("beta").innerHTML = betaOri;
             var gammaOri = data.do.gamma;
-            document.getElementById("gamma").innerHTML = gammaOri;
+            //document.getElementById("gamma").innerHTML = gammaOri;
 
             var accX = data.dm.gx;
-            document.getElementById("accelerationX").innerHTML = accX;
+            //document.getElementById("accelerationX").innerHTML = accX;
             var accY = data.dm.gy;
-            document.getElementById("accelerationY").innerHTML = accY;
+            //document.getElementById("accelerationY").innerHTML = accY;
             var accZ = data.dm.gz;
-            document.getElementById("accelerationZ").innerHTML = accZ;
+            //document.getElementById("accelerationZ").innerHTML = accZ;
 
             var alphaAcc = data.dm.alpha;
-            document.getElementById("rotationAlpha").innerHTML = alphaAcc;
+            //document.getElementById("rotationAlpha").innerHTML = alphaAcc;
             var betaAcc = data.dm.beta;
-            document.getElementById("rotationBeta").innerHTML = betaAcc;
+            //document.getElementById("rotationBeta").innerHTML = betaAcc;
             var gammaAcc  = data.dm.gamma;
-            document.getElementById("rotationGamma").innerHTML = gammaAcc;
+            //document.getElementById("rotationGamma").innerHTML = gammaAcc;
 
             if (window.XMLHttpRequest) {
                 // code for IE7+, Firefox, Chrome, Opera, Safari
