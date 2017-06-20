@@ -74,31 +74,29 @@
 <header class="masthead">
     <div class="header-content">
         <div class="header-content-inner">
-
+            <h1 id="homeHeading">Sign In</h1> <br>
             <form action="../form.php" id="form1" method="post">
+                <div class="container">
+                    <label><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required> <br>
+                    <label><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required> <br>
+                    <input type="checkbox" checked="checked"> Remember me
+                </div>
 
-                <h2>Sign Up</h2>
-                <h3>User Information:</h3> <br>
-                UserName*: <br><input type="text" placeholder="User Name" name="UserName" required><br>
-                Password*: <br><input type="password" placeholder="Enter Password" name="psw" required><br>
-                Re-enter Password*: <br><input type="password" placeholder="Re-enter Password" name="psw-repeat" required><br>
-               First Name*: <br><input type="text" name="FirstName" required><br>
-                Age*: <br> <input type="number" name="Age" required><br>
-                Weight* (lbs): <br> <input type="number" name="Weight" required><br>
-                Height* (in): <br> <input type="number" name="Height"  required><br>
-                Gender*:<br>
-                <input type="radio" name="gender"  value="male" checked> Male<br>
-                <input type="radio" name="gender" value="female"> Female<br>
+                <div>
+                    <span class="psw">Forgot <a href="#">password?</a></span> <br>
+                    <span class="signupbtn">New <a href="Login.html">User?</a></span>
+                </div>
 
-                <!--<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.-->
-</form>
-</div>
+            </form>
+        </div>
 
         <br>
-        <button type="submit" class="btn btn-primary btn-xl" form="form1" href="Instructions.html" value="Submit">Submit</button>
+        <button type="submit" class="btn btn-primary btn-xl" form="form1" href="Instructions.html" value="Login">Login</button>
         <!--<a class="btn btn-primary btn-xl" href="App.html">Submit</a>-->
 
-        </div>
+    </div>
     </div>
 </header>
 
