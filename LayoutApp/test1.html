@@ -82,6 +82,7 @@
 <script type="text/javascript">
     var demo = document.getElementById("demo");
     function getLocation() {
+        demo.innerHTML = "made it";
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
         } else {
@@ -89,7 +90,6 @@
         }
     }
     function showPosition(position) {
-        demo.innerHTML = "made it";
         demo.innerHTML = "Latitude: " + position.coords.latitude +
             "<br>Longitude: " + position.coords.longitude;
     }
