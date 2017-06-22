@@ -11,19 +11,37 @@ function pg_connection_string_from_database_url() {
 
 # Here we establish the connection. Yes, that's all.
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
+#$accX = json_decode($_GET['acc']);
 
+//Accelerometer
+$x = $_GET['accX'];
+$y = $_GET['accY'];
+$z = $_GET['accZ'];
+//GyroscopeAcc
+$alphaAcc = $_GET['alphaAcc'];
+$betaAcc = $_GET['betaAcc'];
+$gammaAcc = $_GET['gammaAcc'];
+//GyroscopeOri
+$alphaOri = $_GET['alphaOri'];
+$betaOri = $_GET['betaOri'];
+$gammaOri = $_GET['gammaOri'];
+//Name
+$fName = $_GET['fName'];
+$time_data = $_GET['time'];
+$pos = $_GET['position'];
 # Now let's use the connection for something silly just to prove it works:
-//Gyroscope
-$alpha = $_GET['alpha'];
-$beta = $_GET['beta'];
-$gamma = $_GET['gamma'];
-
-$query = "INSERT INTO gyroscope(alpha, beta, gamma) VALUES($alpha, $beta, $gamma)";
+//$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
+//print $fName;
+$query = "INSERT INTO sensors(acc_x, acc_y, acc_z, gry_x, gry_y, gry_z, gry_g_x, gry_g_y, gry_g_z, user_id, time_data, pos ) VALUES($x, $y, $z, $alphaAcc, $betaAcc, $gammaAcc, $alphaOri, $betaOri, $gammaOri, '$fName', $time_data, $pos)";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
-    $errorMessage = pg_last_error();
-    echo "Error with query: " . $errorMessage;
-    print "<h2>GYR ERROR</h2>";
+    $errormessage = pg_last_error();
+    echo "Error with query: " . $errormessage;
+    print "<h2>SENSOR ERROR</h2>";
     exit();
 }
+else{
+    print "<h2>No error</h2>";
+}
+
 ?>
