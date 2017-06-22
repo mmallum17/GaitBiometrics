@@ -84,6 +84,8 @@
 
 <script src="../gyronorm.complete.min.js"></script>
 <script type="text/javascript">
+    var audio = new Audio('audio/beep-01a.wav');
+
     /*function PlaySound(soundObj) {
         var sound = document.getElementById(soundObj);
         sound.Play();
@@ -157,7 +159,7 @@
                 navigator.vibrate(1000);
             }*/
             //PlaySound("sound1");
-            var audio = new Audio('audio/beep-01a.wav');
+            //var audio = new Audio('audio/beep-01a.wav');
             audio.play();
             setTimeout(function(){
                 window.location.href = "Position.html";
