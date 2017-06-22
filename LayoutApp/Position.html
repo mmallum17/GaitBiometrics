@@ -74,12 +74,12 @@
         <div class="header-content-inner">
             <form action="instructions2.html" id="form1" method="post">
                 <h2> Where you place your phone during the test?*:</h2><br>
-                <input type="radio" name="position"  value="RightHand"> Right Hand<br>
-                <input type="radio" name="position"  value="LeftHand"> Left Hand<br>
-                <input type="radio" name="position"  value="RFrontP"> Right Front Pocket<br>
-                <input type="radio" name="position"  value="LFrontP"> Left Front Pocket<br>
-                <input type="radio" name="position"  value="RBackP"> Right Back Pocket<br>
-                <input type="radio" name="position"  value="LBackP"> Left Back Pocket<br>
+                <input type="radio" id="rh" name="position"  value="RightHand"> Right Hand<br>
+                <input type="radio" id="lh" name="position"  value="LeftHand"> Left Hand<br>
+                <input type="radio" id="rfp" name="position"  value="RFrontP"> Right Front Pocket<br>
+                <input type="radio" id="lfp" name="position"  value="LFrontP"> Left Front Pocket<br>
+                <input type="radio" id="rbp" name="position"  value="RBackP"> Right Back Pocket<br>
+                <input type="radio" id="lbp" name="position"  value="LBackP"> Left Back Pocket<br>
             </form>
         </div>
 
@@ -101,7 +101,25 @@
 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script type="text/javascript">
     function storePos(){
-        var position = document.getElementById("position");
+        if (document.getElementById('rh').checked) {
+            localStorage.setItem("position", 0)
+        }
+        else if(document.getElementById('lh').checked) {
+            localStorage.setItem("position", 1)
+        }
+        else if(document.getElementById('rfp').checked) {
+            localStorage.setItem("position", 2)
+        }
+        else if(document.getElementById('lfp').checked) {
+            localStorage.setItem("position", 3)
+        }
+        else if(document.getElementById('rbp').checked) {
+            localStorage.setItem("position", 4)
+        }
+        else if(document.getElementById('lbp').checked) {
+            localStorage.setItem("position", 5)
+        }
+
     }
 </script>
 

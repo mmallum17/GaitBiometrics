@@ -28,10 +28,11 @@ $gammaOri = $_GET['gammaOri'];
 //Name
 $fName = $_GET['fName'];
 $time_data = $_GET['time'];
+$pos = $_GET['position'];
 # Now let's use the connection for something silly just to prove it works:
 //$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
 //print $fName;
-$query = "INSERT INTO sensors(acc_x, acc_y, acc_z, gry_x, gry_y, gry_z, gry_g_x, gry_g_y, gry_g_z, user_id, time_data ) VALUES($x, $y, $z, $alphaAcc, $betaAcc, $gammaAcc, $alphaOri, $betaOri, $gammaOri, '$fName', $time_data)";
+$query = "INSERT INTO sensors(acc_x, acc_y, acc_z, gry_x, gry_y, gry_z, gry_g_x, gry_g_y, gry_g_z, user_id, time_data, pos ) VALUES($x, $y, $z, $alphaAcc, $betaAcc, $gammaAcc, $alphaOri, $betaOri, $gammaOri, '$fName', $time_data, $pos)";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
