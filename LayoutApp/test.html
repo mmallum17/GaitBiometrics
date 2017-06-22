@@ -77,6 +77,7 @@
 </header>
 <h1 id="demo">Walk for the next 10 Seconds </h1>
 <h1 id="countdown">Seconds left: </h1>
+<input type="button" value="PLAY"  onclick="play()">
 <audio id="my-audio" src="audio/beep-01a.wav">
 </audio>
 <!--<audio id="player"></audio>
@@ -88,8 +89,12 @@
 
 <script src="../gyronorm.complete.min.js"></script>
 <script type="text/javascript">
-    var myAudio = document.getElementById('my-audio');
-    myAudio.play();
+    function play() {
+        var audio = document.getElementById("my-audio");
+        audio.play();
+    }
+    //var myAudio = document.getElementById('my-audio');
+    //myAudio.play();
     //var audio = new Audio('audio/beep-01a.wav');
     //audio.play();
     /*function PlaySound(soundObj) {
