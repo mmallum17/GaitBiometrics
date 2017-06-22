@@ -104,7 +104,7 @@
     //var audio = new Audio('audio/beep-01a.wav')
 function play() {
     var audio = document.getElementById("my-audio");
-    audio.play();
+    //audio.play();
 
     setTimeout(function () {
         var args = {
@@ -171,6 +171,7 @@ function play() {
         if (
             countdown <= 0) {
             clearInterval(x);
+            audio.play();
             /*if ("vibrate" in navigator) {
                 navigator.vibrate(1000);
             }*/
