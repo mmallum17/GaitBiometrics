@@ -35,7 +35,7 @@ $query = "INSERT INTO sensors(acc_x, acc_y, acc_z, gry_x, gry_y, gry_z, gry_g_x,
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
-    //echo "Error with query: " . $errormessage;
+    echo "Error with query: " . $errormessage;
     print "<h2>SENSOR ERROR</h2>";
     exit();
 }
