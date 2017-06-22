@@ -193,18 +193,18 @@
             current = new Date().getTime() - prev;
             if (window.XMLHttpRequest) {
                 // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
+                xmlhttp2 = new XMLHttpRequest();
             } else {
                 // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                xmlhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
             }
-            xmlhttp.onreadystatechange = function () {
+            xmlhttp2.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("messageAcc").innerHTML = this.responseText;
                 }
             };
-            xmlhttp.open("GET", "../databaseGyr.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&fName=" + firstName + "&time=" + time + "&position=" + position, true);
-            xmlhttp.send();
+            xmlhttp2.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&fName=" + firstName + "&time=" + time + "&position=" + position, true);
+            xmlhttp2.send();
             prev = current;
         });
     }).catch(function(e){
