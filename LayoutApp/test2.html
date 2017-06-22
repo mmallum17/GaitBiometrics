@@ -164,9 +164,10 @@
     navigator.geolocation.getCurrentPosition(
         successHandler, errorHandler,
         {enableHighAccuracy: true, maximumAge: 10000});*/
-    var time = new Date().getTime();
+    var start = new Date().getTime();
     gn.init(args).then(function(){
         gn.start(function(data){
+            var time = new Date().getTime() - start;
             var alphaOri = data.do.alpha;
             //document.getElementById("alpha").innerHTML = alphaOri;
             var betaOri = data.do.beta;
@@ -200,7 +201,7 @@
                     document.getElementById("messageAcc").innerHTML = this.responseText;
                 }
             };
-            xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&fName=" + firstName, true);
+            xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&fName=" + firstName + "&time=" + time, true);
             xmlhttp.send();
             prev = current;
         });
