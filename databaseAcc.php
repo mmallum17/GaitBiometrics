@@ -26,7 +26,7 @@ $alphaOri = $_GET['alphaOri'];
 $betaOri = $_GET['betaOri'];
 $gammaOri = $_GET['gammaOri'];
 //Name
-$fName = $_GET['firstName'];
+$fName = $_GET['fName'];
 # Now let's use the connection for something silly just to prove it works:
 //$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
 print $fName;
