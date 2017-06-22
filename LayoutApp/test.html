@@ -89,10 +89,10 @@
 
 <script src="../gyronorm.complete.min.js"></script>
 <script type="text/javascript">
-    function play() {
+   /* function play() {
             var audio = document.getElementById("my-audio");
             audio.play();
-    }
+    }*/
     //var myAudio = document.getElementById('my-audio');
     //myAudio.play();
     //var audio = new Audio('audio/beep-01a.wav');
@@ -102,70 +102,74 @@
         sound.Play();
     }*/
     //var audio = new Audio('audio/beep-01a.wav')
+function play() {
+    var audio = document.getElementById("my-audio");
+    audio.play();
 
-    setTimeout(function(){
-    var args = {
-        frequency:50,
-        gravityNormalized:true,
-        orientationBase:GyroNorm.GAME,
-        decimalCount:8,
-        logger:null,
-        screenAdjusted:false
-    };
-    var gn = new GyroNorm();
-    gn.init(args).then(function(){
-        gn.start(function(data){
-            var alphaOri = data.do.alpha;
-            //document.getElementById("alpha").innerHTML = alphaOri;
-            var betaOri = data.do.beta;
-            //document.getElementById("beta").innerHTML = betaOri;
-            var gammaOri = data.do.gamma;
-            //document.getElementById("gamma").innerHTML = gammaOri;
+    setTimeout(function () {
+        var args = {
+            frequency: 50,
+            gravityNormalized: true,
+            orientationBase: GyroNorm.GAME,
+            decimalCount: 8,
+            logger: null,
+            screenAdjusted: false
+        };
+        var gn = new GyroNorm();
+        gn.init(args).then(function () {
+            gn.start(function (data) {
+                var alphaOri = data.do.alpha;
+                //document.getElementById("alpha").innerHTML = alphaOri;
+                var betaOri = data.do.beta;
+                //document.getElementById("beta").innerHTML = betaOri;
+                var gammaOri = data.do.gamma;
+                //document.getElementById("gamma").innerHTML = gammaOri;
 
-            var accX = data.dm.gx;
-            //document.getElementById("accelerationX").innerHTML = accX;
-            var accY = data.dm.gy;
-            //document.getElementById("accelerationY").innerHTML = accY;
-            var accZ = data.dm.gz;
-            //document.getElementById("accelerationZ").innerHTML = accZ;
+                var accX = data.dm.gx;
+                //document.getElementById("accelerationX").innerHTML = accX;
+                var accY = data.dm.gy;
+                //document.getElementById("accelerationY").innerHTML = accY;
+                var accZ = data.dm.gz;
+                //document.getElementById("accelerationZ").innerHTML = accZ;
 
-            var alphaAcc = data.dm.alpha;
-            //document.getElementById("rotationAlpha").innerHTML = alphaAcc;
-            var betaAcc = data.dm.beta;
-            //document.getElementById("rotationBeta").innerHTML = betaAcc;
-            var gammaAcc  = data.dm.gamma;
-            //document.getElementById("rotationGamma").innerHTML = gammaAcc;
+                var alphaAcc = data.dm.alpha;
+                //document.getElementById("rotationAlpha").innerHTML = alphaAcc;
+                var betaAcc = data.dm.beta;
+                //document.getElementById("rotationBeta").innerHTML = betaAcc;
+                var gammaAcc = data.dm.gamma;
+                //document.getElementById("rotationGamma").innerHTML = gammaAcc;
 
-            if (window.XMLHttpRequest) {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
-            } else {
-                // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    //document.getElementById("messageAcc").innerHTML = this.responseText;
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                 }
-            };
-            xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri, true);
-            xmlhttp.send();
-        });
-    }).catch(function(e){
-        document.getElementById("messageGN").innerHTML = "NOT COMPATIBLE";
-        /*Catch if the DeviceOrientation or DeviceMotion events
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        //document.getElementById("messageAcc").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri, true);
+                xmlhttp.send();
+            });
+        }).catch(function (e) {
+            document.getElementById("messageGN").innerHTML = "NOT COMPATIBLE";
+            /*Catch if the DeviceOrientation or DeviceMotion events
          are not supported by the browser or device*/
     });
 
     var countdown = 10;
-    // Update the count down every 1 second
+        // Update the count down every 1 second
     var x = setInterval(function() {
         countdown--;
         // Display the result in the element with id="demo"
         document.getElementById("countdown").innerHTML = countdown + " s Left";
 
         // If the count down is finished, write some text
-        if (countdown <= 0) {
+        if (
+            countdown <= 0) {
             clearInterval(x);
             /*if ("vibrate" in navigator) {
                 navigator.vibrate(1000);
@@ -182,6 +186,7 @@
         }
     }, 1000);
     },5000);
+}
 
 </script>
 
