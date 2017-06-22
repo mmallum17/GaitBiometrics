@@ -164,7 +164,7 @@
     navigator.geolocation.getCurrentPosition(
         successHandler, errorHandler,
         {enableHighAccuracy: true, maximumAge: 10000});*/
-    var prev = new Date().getTime();
+    var time = new Date().getTime();
     gn.init(args).then(function(){
         gn.start(function(data){
             var alphaOri = data.do.alpha;
