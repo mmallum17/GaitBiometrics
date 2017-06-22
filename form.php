@@ -17,11 +17,11 @@ $age = $_POST["Age"];
 $weight = $_POST["Weight"];
 $height = $_POST["Height"];
 $gender = $_POST["gender"];
-$cname = $_POST["UserName"];
+$userName = $_POST["Name"];
 
 //print $name . " " . $age . " " . $weight . " " . $height . " " . $gender;
 
-$query = "INSERT INTO user_info(age, weight, height, gender,user_name) VALUES($age, $weight, $height, '$gender','$cname')";
+$query = "INSERT INTO user_info(age, weight, height, gender,user_name) VALUES($age, $weight, $height, '$gender','$userName')";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
