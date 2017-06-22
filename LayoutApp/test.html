@@ -171,8 +171,9 @@ function play() {
         if (
             countdown <= 0) {
             clearInterval(x);
-            document.getElementById("countdown").innerHTML = "EXPIRED";
             audio.play();
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+
             /*if ("vibrate" in navigator) {
                 navigator.vibrate(1000);
             }*/
