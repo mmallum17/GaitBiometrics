@@ -82,6 +82,7 @@
 
 <script src="../gyronorm.complete.min.js"></script>
 <script type="text/javascript">
+    setTimeout(function(){
     var args = {
         frequency:50,
         gravityNormalized:true,
@@ -146,16 +147,17 @@
         if (countdown <= 0) {
             clearInterval(x);
             if ("vibrate" in navigator) {
-                navigator.vibrate(5000);
+                navigator.vibrate(1000);
                 setTimeout(function(){
                     window.location.href = 'Position.html'; //next page
 
-                },5000);
+                },1000);
             }
             //document.getElementById("countdown").innerHTML = "EXPIRED";
             //window.location.href = 'End.html';
         }
     }, 1000);
+    },5000);
 
 </script>
 

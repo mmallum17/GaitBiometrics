@@ -181,11 +181,11 @@
         if (countdown <= 0) {
             clearInterval(x);
             if ("vibrate" in navigator) {
-                navigator.vibrate(5000);
+                navigator.vibrate(1000);
                 setTimeout(function(){
                     window.location.href = 'Position.html';
 
-                },5000);
+                },1000);
             }
             //document.getElementById("countdown").innerHTML = "EXPIRED";
             //window.location.href = 'End.html';
