@@ -190,7 +190,6 @@
             //document.getElementById("rotationBeta").innerHTML = betaAcc;
             var gammaAcc  = data.dm.gamma;
             //document.getElementById("rotationGamma").innerHTML = gammaAcc;
-            current = new Date().getTime() - prev;
             if (window.XMLHttpRequest) {
                 // code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp2 = new XMLHttpRequest();
@@ -205,7 +204,6 @@
             };
             xmlhttp2.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&fName=" + firstName + "&time=" + time + "&position=" + position, true);
             xmlhttp2.send();
-            prev = current;
         });
     }).catch(function(e){
         document.getElementById("messageGN").innerHTML = "NOT COMPATIBLE";
