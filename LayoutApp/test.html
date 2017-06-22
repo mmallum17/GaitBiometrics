@@ -106,7 +106,6 @@ function play() {
         var audio = document.getElementById("my-audio");
         audio.play();
         audio.pause();
-        audio.play();
 
     setTimeout(function () {
         var args = {
@@ -173,8 +172,8 @@ function play() {
         if (
             countdown <= 0) {
             clearInterval(x);
-            //audio.play();
-            //document.getElementById("countdown").innerHTML = "EXPIRED";
+            audio.play();
+            document.getElementById("countdown").innerHTML = "EXPIRED";
 
             /*if ("vibrate" in navigator) {
                 navigator.vibrate(1000);
