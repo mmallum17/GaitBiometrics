@@ -17,15 +17,23 @@ $pg_conn = pg_connect(pg_connection_string_from_database_url());
 $x = $_GET['accX'];
 $y = $_GET['accY'];
 $z = $_GET['accZ'];
+//GyroscopeAcc
+$alphaAcc = $_GET['alphaAcc'];
+$betaAcc = $_GET['betaAcc'];
+$gammaAcc = $_GET['gammaAcc'];
+//GyroscopeOri
+$alphaOri = $_GET['alphaOri'];
+$betaOri = $_GET['betaOri'];
+$gammaOri = $_GET['gammaOri'];
 # Now let's use the connection for something silly just to prove it works:
 //$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
 
-$query = "INSERT INTO sensors(acc_x, acc_y, acc_z) VALUES($x, $y, $z)";
+$query = "INSERT INTO sensors(acc_x, acc_y, acc_z, gry_x, gry_y, gry_z, gry_g_x, gry_g_y, gry_g_z) VALUES($x, $y, $z, $alphaAcc, $betaAcc, $gammaAcc, $alphaOri, $betaOri, $gammaOri)";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
     echo "Error with query: " . $errormessage;
-    print "<h2>ACC-acc ERROR</h2>";
+    print "<h2>SENSOR ERROR</h2>";
     exit();
 }
 else{
@@ -33,7 +41,7 @@ else{
 }
 
 //GyroscopeAcc
-$alpha = $_GET['alphaAcc'];
+/*$alpha = $_GET['alphaAcc'];
 $beta = $_GET['betaAcc'];
 $gamma = $_GET['gammaAcc'];
 
@@ -64,7 +72,7 @@ if (!$result) {
 }
 else{
     print "<h2>No error</h2>";
-}
+}*/
 /*print "<pre>\n";
 if (!pg_num_rows($result)) {
     print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
