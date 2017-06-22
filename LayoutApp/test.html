@@ -78,7 +78,7 @@
 <h1 id="demo">Walk for the next 10 Seconds </h1>
 <h1 id="countdown">Seconds left: </h1>
 <input type="button" value="PLAY"  onclick="play()">
-Hi <h1 id="name"></h1>
+<!--Hi <h1 id="name"></h1>-->
 <h1 id="messageErr"></h1>
 <audio id="my-audio" src="audio/beep-01a.wav">
 </audio>
@@ -109,7 +109,7 @@ function play() {
         audio.play();
         audio.pause();
         var firstName = localStorage.getItem("firstName");
-        document.getElementById("name").innerHTML = firstName;
+        //document.getElementById("name").innerHTML = firstName;
 
     setTimeout(function () {
         var args = {
