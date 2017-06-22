@@ -20,7 +20,7 @@ $z = $_GET['accZ'];
 # Now let's use the connection for something silly just to prove it works:
 //$result = pg_query($pg_conn, "INSERT INTO accelerometer (x, y, z) VALUES ('$acc[0]','$acc[1]','$acc[2]')");
 
-$query = "INSERT INTO accelerometer(x, y, z) VALUES($x, $y, $z)";
+$query = "INSERT INTO sensors(acc_x, acc_y, acc_z) VALUES($x, $y, $z)";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
@@ -37,7 +37,7 @@ $alpha = $_GET['alphaAcc'];
 $beta = $_GET['betaAcc'];
 $gamma = $_GET['gammaAcc'];
 
-$query = "INSERT INTO gyroscope_gravity(alpha, beta, gamma) VALUES($alpha, $beta, $gamma)";
+$query = "INSERT INTO sensors(gry_x,gry_y,gry_z) VALUES($alpha, $beta, $gamma)";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
@@ -54,7 +54,7 @@ $alpha = $_GET['alphaOri'];
 $beta = $_GET['betaOri'];
 $gamma = $_GET['gammaOri'];
 
-$query = "INSERT INTO gyroscope(alpha, beta, gamma) VALUES($alpha, $beta, $gamma)";
+$query = "INSERT INTO sensors(gry_g_x,gry_g_y,gry_g_z) VALUES($alpha, $beta, $gamma)";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
