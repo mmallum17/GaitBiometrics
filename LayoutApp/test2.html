@@ -80,8 +80,8 @@
 <header>
     <section>
         <h1 id="countdown"></h1>
-        Message: <h1 id="messageAcc"></h1>
-        TEST:<h1 id="test"></h1>
+        <!--Message: <h1 id="messageAcc"></h1>-->
+        <!--TEST:<h1 id="test"></h1>-->
         <h1 style="color:#F05F40;
     border-width: 3px;
   border-color: #F05F40; ">Where is Waldo?</h1>
@@ -171,7 +171,7 @@
         gn.start(function(data){
             var time = new Date().getTime() - start;
             var alphaOri = data.do.alpha;
-            document.getElementById("test").innerHTML = alphaOri;
+//            document.getElementById("test").innerHTML = alphaOri;
             var betaOri = data.do.beta;
             //document.getElementById("beta").innerHTML = betaOri;
             var gammaOri = data.do.gamma;
@@ -199,7 +199,7 @@
             }
             xmlhttp2.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("messageAcc").innerHTML = this.responseText;
+//                    document.getElementById("messageAcc").innerHTML = this.responseText;
                 }
             };
             xmlhttp2.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&fName=" + firstName + "&time=" + time + "&position=" + position, true);
