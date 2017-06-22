@@ -221,16 +221,12 @@
         // If the count down is finished, write some text
         if (countdown <= 0) {
             clearInterval(x);
-            if ("vibrate" in navigator) {
-                navigator.vibrate(1000);
-                setTimeout(function(){
-                    window.location.href = 'End.html';
-
-                },1000);
-            }
-            //document.getElementById("countdown").innerHTML = "EXPIRED";
-            //window.location.href = 'End.html';
+            setTimeout(function(){
+                window.location.href = 'End.html';
+            },1000);
         }
+            //document.getElementById("countdown").innerHTML = "EXPIRED";
+            //window.location.href = 'End.html'
     }, 1000);
 /*    function saveData(){
 
