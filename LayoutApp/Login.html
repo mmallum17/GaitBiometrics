@@ -70,62 +70,48 @@
     var weight = "Weight*:";
 </script>
 
-<script type="text/javascript">
 
-    function checkForm(form)
-    {
-        if(form.username.value == "") {
-            alert("Error: Username cannot be blank!");
-            form.username.focus();
-            return false;
-        }
-        re = /^\w+$/;
-        if(!re.test(form.username.value)) {
-            alert("Error: Username must contain only letters, numbers and underscores!");
-            form.username.focus();
-            return false;
+    <script>
+
+        function setCookie(cname,cvalue,exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
         }
 
-        if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
-            if(form.pwd1.value.length < 6) {
-                alert("Error: Password must contain at least six characters!");
-                form.pwd1.focus();
-                return false;
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
             }
-            if(form.pwd1.value == form.username.value) {
-                alert("Error: Password must be different from Username!");
-                form.pwd1.focus();
-                return false;
-            }
-            re = /[0-9]/;
-            if(!re.test(form.pwd1.value)) {
-                alert("Error: password must contain at least one number (0-9)!");
-                form.pwd1.focus();
-                return false;
-            }
-            re = /[a-z]/;
-            if(!re.test(form.pwd1.value)) {
-                alert("Error: password must contain at least one lowercase letter (a-z)!");
-                form.pwd1.focus();
-                return false;
-            }
-            re = /[A-Z]/;
-            if(!re.test(form.pwd1.value)) {
-                alert("Error: password must contain at least one uppercase letter (A-Z)!");
-                form.pwd1.focus();
-                return false;
-            }
-        } else {
-            alert("Error: Please check that you've entered and confirmed your password!");
-            form.pwd1.focus();
-            return false;
+            return "";
         }
 
-        alert("You entered a valid password: " + form.pwd1.value);
-        return true;
-    }
+        function checkCookie() {
+            var user=getCookie("username");
+            if (user != "") {
+                alert("Welcome again " + user);
+            } else {
+                user = prompt("Please enter your name:","");
+                if (user != "" && user != null) {
+                    setCookie("username", user, 30);
+                }
+            }
+        }
 
-</script>
+    </script>
+
+<body onload="checkCookie()">
+</body>
 
 
 
@@ -137,9 +123,6 @@
 
                 <h2>Sign Up</h2>
                 <h3>User Information:</h3> <br>
-                UserName*: <br><input type="text" placeholder="User Name" name="UserName" required><br>
-                Password*: <br><input type="password" placeholder="Enter Password" name="pwd1" required><br>
-                Re-enter Password*: <br><input type="password" placeholder="Re-enter Password" name="pwd2" required><br>
                 Age*: <br> <input type="number" name="Age" required><br>
                 Weight* (lbs): <br> <input type="number" name="Weight" required><br>
                 Height* (in): <br> <input type="number" name="Height"  required><br>
@@ -158,6 +141,7 @@
         </div>
     </div>
 </header>
+
 
 
 <!--translate-->
