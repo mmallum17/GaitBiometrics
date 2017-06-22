@@ -103,10 +103,9 @@
     }*/
     //var audio = new Audio('audio/beep-01a.wav')
 function play() {
-    setTimeout(function(){
         var audio = document.getElementById("my-audio");
         audio.play();
-    }, 1000);
+        audio.pause();
 
     setTimeout(function () {
         var args = {
