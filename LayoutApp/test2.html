@@ -81,6 +81,7 @@
     <section>
         <h1 id="countdown"></h1>
         Message: <h1 id="messageAcc"></h1>
+        TEST:<h1 id="test"></h1>
         <h1 style="color:#F05F40;
     border-width: 3px;
   border-color: #F05F40; ">Where is Waldo?</h1>
@@ -170,7 +171,7 @@
         gn.start(function(data){
             var time = new Date().getTime() - start;
             var alphaOri = data.do.alpha;
-            //document.getElementById("alpha").innerHTML = alphaOri;
+            document.getElementById("test").innerHTML = alphaOri;
             var betaOri = data.do.beta;
             //document.getElementById("beta").innerHTML = betaOri;
             var gammaOri = data.do.gamma;
