@@ -1,6 +1,7 @@
 <?php
 //$uniqid()
-header( 'Location: /LayoutApp/Instructions.html' ) ;
+$userName = $_POST["Name"];
+header( "Location: /LayoutApp/Instructions.html?name=$userName" ) ;
 function pg_connection_string_from_database_url() {
     $user = "fnfgduxoqaonjm";
     $pass = "3a5ef4d082610ea1f9f88d557ae503cb2cb7d5dd5eb97f5c9c0c23a7c0ddf15a";
@@ -17,7 +18,7 @@ $age = $_POST["Age"];
 $weight = $_POST["Weight"];
 $height = $_POST["Height"];
 $gender = $_POST["gender"];
-$userName = $_POST["Name"];
+//$userName = $_POST["Name"];
 
 //print $name . " " . $age . " " . $weight . " " . $height . " " . $gender;
 

@@ -107,6 +107,7 @@ function play() {
         var audio = document.getElementById("my-audio");
         audio.play();
         audio.pause();
+        var firstName = localStorage.getItem("firstName");
 
     setTimeout(function () {
         var args = {
@@ -153,7 +154,7 @@ function play() {
                         document.getElementById("messageErr").innerHTML = this.responseText;
                     }
                 };
-                xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri, true);
+                xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&fName" + firstName, true);
                 xmlhttp.send();
             });
         }).catch(function (e) {

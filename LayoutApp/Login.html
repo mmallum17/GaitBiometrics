@@ -123,7 +123,7 @@
 
                 <h2>Sign Up</h2>
                 <h3>User Information:</h3> <br>
-                First Name*: <br> <input type="text" name="Name" required><br>
+                First Name*: <br> <input type="text" id="firstName" name="Name" required><br>
                 Age*: <br> <input type="number" name="Age" required><br>
                 Weight* (lbs): <br> <input type="number" name="Weight" required><br>
                 Height* (in): <br> <input type="number" name="Height"  required><br>
@@ -136,7 +136,7 @@
 </div>
 
         <br>
-        <button type="submit" class="btn btn-primary btn-xl" form="form1" href="Instructions.html" value="Submit">Submit</button>
+        <button type="submit" class="btn btn-primary btn-xl" onclick="store()" form="form1" href="Instructions.html" value="Submit">Submit</button>
         <!--<a class="btn btn-primary btn-xl" href="App.html">Submit</a>-->
 
         </div>
@@ -151,7 +151,12 @@
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
     }
 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+<script type="text/javascript">
+    function store(){
+        var fName = document.getElementById("firstName");
+        localStorage.setItem("firstName", fName.value)
+    }
+</script>
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
