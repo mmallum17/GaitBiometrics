@@ -56,11 +56,12 @@
         <div class="collapse navbar-collapse" id="navbarExample">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html#about">Home</a>
+                    <a class="nav-link" class="trn" href="#about" lang="en">Home</a>
+                    <a class="nav-link" class="trn" href="#about" lang="es">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html#contact">Contact</a>
-                </li>
+                    <a class="nav-link" href="#contact" lang="en">Contact</a>
+                    <a class="nav-link" href="#contact" lang="es">Contactos</a>
             </ul>
         </div>
     </div>
@@ -123,51 +124,29 @@
             <form action="../form.php" id="form1" method="post">
 
                 <!--English-->
-                <h2 lang="en">Sign Up</h2>
                 <h3 lang="en">User Information:</h3> <br>
-                <label lang="en" >First and Last Name*: </label> <br> <input type="text" id="firstName" name="Name" style="width: 200px;" required><br>
-                <label lang="en">Age*:</label> <br> <input type="number" name="Age" style="width: 200px;" required><br>
-                <label lang="en">Weight*:</label> <br><input type="number" name="Weight" style="width: 200px; margin-left: 50px; padding-right: 100px;" required>
+                <h3 lang="es">Información del Usuario:</h3> <br>
+                <label lang="en" >First and Last Name*: </label>  <label lang="es">Nombre y Apellido: </label>  <br> <input type="text" id="firstName" name="Name" style="width: 200px;" required><br>
+                <label lang="en">Age*:</label>  <label lang="es">Edad*:</label> <br> <input type="number" name="Age" style="width: 200px;" required><br>
+                <label lang="en">Weight*:</label> <label lang="es">Peso*:</label> <br><input type="number" name="Weight" style="width: 200px; margin-left: 50px; padding-right: 100px;" required>
                 <select name="wMetric">
                     <option value="pounds" lang="en">lbs</option>
                     <option value="kilos" lang="en">kgs</option>
                 </select><br>
-                <label lang="en">Height*:</label> <br> <input type="number" name="Height" style="width: 200px; margin-left: 43px; padding-right: 100px;" required>
+                <label lang="en">Height*:</label>  <label lang="es">Estatura*:</label>  <br> <input type="number" name="Height" style="width: 200px; margin-left: 43px; padding-right: 100px;" required>
                 <select name="hMetric">
                     <option value="inches" lang="en">in</option>
                     <option value="meters" lang="en">m</option>
                 </select><br>
-                <label lang="en">Gender*:</label><br>
-                <input type="radio" name="gender"  value="male" lang="en" > Male<br>
-                <input type="radio" name="gender" value="female" lang="en"> Female<br>
-                <input type="radio" name="gender" value="other" lang="en"> Other<br>
-                <label lang="en">Laterality*:</label> <br>
-                <input type="radio" name="laterality"  value="right" lang="en"> Right<br>
-                <input type="radio"  name="laterality" value="left" lang="en"> Left<br>
+                <label lang="en">Gender*:</label> <label lang="es">Sexo*:</label><br>
+                <input type="radio" name="gender"  value="male"> <label lang="en">Male</label> <label lang="es">Masculino</label><br>
+                <input type="radio" name="gender" value="female"> <label lang="en">Female</label> <label lang="es">Femenino </label> <br>
+                <input type="radio" name="gender" value="other"> <label lang="en"> Other</label> <label lang="es">Otro</label> <br>
+                <label lang="en">Laterality*:</label> <label lang="es">Lateralidad*:</label>  <br>
+                <input type="radio" name="laterality"  value="right"> <label lang="en">Right</label> <label lang="es"> Derecho</label><br>
+                <input type="radio"  name="laterality" value="left"> <label lang="en"> Left</label> <label lang="es">Izquierda</label><br>
 
 
-                <!--Spanish-->
-                <h2 lang="es">Regístrate</h2>
-                <h3 lang="es">Información del Usuario:</h3> <br>
-                <label lang="es">Nombre y Apellido: </label> <br> <input type="text"  name="Name" style="width: 200px;" required> <br>
-                <label lang="es">Edad*:</label> <br> <input type="number" name="Age" style="width: 200px;" required><br>
-                <label lang="es">Peso*:</label> <br><input type="number" name="Weight" style="width: 200px; margin-left: 50px; padding-right: 100px;" required>
-                <select name="wMetric">
-                    <option value="pounds" lang="es">lbs</option>
-                    <option value="kilos" lang="es">kgs</option>
-                </select> <br>
-                <label lang="es">Estatura*:</label> <br> <input type="number" name="Height" style="width: 200px; margin-left: 43px; padding-right: 100px;" required>
-                <select name="hMetric">
-                    <option value="inches" lang="es">in</option>
-                    <option value="meters" lang="es">m</option>
-                </select><br>
-                <label lang="es">Sexo*:</label><br>
-                <input type="radio" name="gender"  value="male" lang="es"> Masculino<br>
-                <input type="radio" name="gender" value="female" lang="es"> Femenino<br>
-                <input type="radio" name="gender" value="other" lang="es"> Otros<br>
-                <label lang="es">Lateralidad*:</label> <br>
-                <input type="radio"  name="laterality"  value="right" lang="es"> Derecha<br>
-                <input type="radio"  name="laterality" value="left" lang="es"> Izquierda<br>
 
 
                 <!--<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.-->
@@ -175,7 +154,8 @@
 </div>
 
         <br>
-        <button type="submit" class="btn btn-primary btn-xl" onclick="store()" form="form1" href="Instructions.html" value="Submit">Submit</button>
+        <button type="submit" class="btn btn-primary btn-xl" onclick="store()" form="form1" href="Instructions.html" value="Submit" lang="en">Submit</button>
+        <button type="submit" class="btn btn-primary btn-xl" onclick="store()" form="form1" href="Instructions.html" value="Submit" lang="es">Someter</button>
         <!--<a class="btn btn-primary btn-xl" href="App.html">Submit</a>-->
 
         </div>
