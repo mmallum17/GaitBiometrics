@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<span title="Spanish"><a lang="es" href="qa-html-language-declarations.es">Español</a></span>
+<html>
 
 <head>
 
@@ -38,12 +37,11 @@
         }
     </style>
 
+
+
 </head>
 
-
-
 <body id="page-top">
-
 
 <!-- Navigation -->
 <nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
@@ -55,48 +53,56 @@
         <div class="collapse navbar-collapse" id="navbarExample">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html#about">Home</a>
+                    <a class="nav-link" class="trn" href="#about">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html#contact">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<script>
-
-</script>
-
-
 
 <header class="masthead">
     <div class="header-content">
         <div class="header-content-inner">
-                <h1>Instructions</h1><br>
 
-                <ol>
-                    <li>Find an open area where you have space to walk for 10 seconds</li>
-                    <li>Place your phone either in the right or left hand, right or left front pocket, or right or left back pocket</li>
-                    <li>Make sure the screen of your phone is always facing your body and the top of the phone is pointing down.</li>
-                    <li>Click 'Start' button to begin.</li>
-                </ol>
+
+            <h1 id="homeHeading">Biometrics Gait Recognition App</h1>
+            <hr>
+            <h2>Choose Language: </h2>
+            <a onclick="changeToEnglish()"  class="btnEnglish" href="index.html"> English</a>
+            <a onclick="changeToSpanish()" class="btnEnglish" href="index.html"> Spanish</a>
+
         </div>
-
-        <br>
-        <a type="submit" class="btn btn-primary btn-xl" href="Position.html">Start</a>
-        <!--<a class="btn btn-primary btn-xl" href="App.html">Submit</a>-->
-
     </div>
-
-
 </header>
 
-<script>
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <h2 class="section-heading" lang="en">Let's Test the App!</h2>
+                <h2 class="section-heading" lang="es">Vamos a probar la aplicación!</h2>
+                <hr class="primary">
+                <p lang="en">This is a Test!</p>
+                <p lang="es">Esto es una Prueba!</p>
+            </div>
+            <div class="col-lg-4 offset-lg-2 text-center">
+                <i class="fa fa-phone fa-3x sr-contact"></i>
+                <p lang="en">Call for test</p>
+                <p lang="es">Llamanos para una Prueba</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                <p><a href="mailto:your-email@your-domain.com">tamararosariocolon@gmail.com</a></p>
+                <p><a href="mailto:your-email@your-domain.com">marcusmallum@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-
-</script>
 
 
 <!--translate-->
@@ -105,7 +111,6 @@
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
     }
 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>

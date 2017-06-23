@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -71,16 +71,20 @@
         <h1 style="color:#F05F40;
     border-width: 3px;
   border-color: #F05F40; ">Test #1</h1>
-        <p>Follow this next steps: </p>
+        <p lang="en">Follow this next steps: </p>
+        <p lang="es">Favor de seguir los siguentes pasos: </p>
         <ol>
-            <li>Place the phone next to your ear as if you're making a phone call</li>
-            <li>Listen for the magic code</li>
+            <li lang="en">Place the phone next to your ear as if you're making a phone call</li>
+            <li lang="en">Listen for the magic code</li>
+            <li lang="es">Coloque su telefono en su odio, como si estuviera haciendo una llamada</li>
+            <li lang="es">Escuche para obtener el código secreto</li>
             <!--<li>To start the test Press the "Begin in 5 Seconds" button</li>
             <li>You have 5 seconds to place your phone, on one of the six positions</li>
             <li>Begin to walk, until you phone beep. Make sure the volume of the phone is laud.</li>
             <li>Enjoy</li>-->
         </ol>
-        <input type="button" class="btn btn-primary btn-xl" value="Begin in 5 Seconds"  onclick="play()">
+        <input type="button" class="btn btn-primary btn-xl" value="Begin in 5 Seconds" lang="en" onclick="play()">
+        <input type="button" class="btn btn-primary btn-xl" value="Comenzar en 5 Segundos" lang="es" onclick="play()">
         <h1 id="countdown"></h1>
     </section>
 
@@ -227,6 +231,7 @@
 
 <!-- Custom scripts for this template -->
 <script src="js/creative.min.js"></script>
+<script src="jquery.translate.js"></script>
 
 <!--/body-->
 
