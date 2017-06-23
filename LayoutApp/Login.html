@@ -120,13 +120,20 @@
         <div class="header-content-inner">
 
             <form action="../form.php" id="form1" method="post">
-
                 <h2>Sign Up</h2>
                 <h3>User Information:</h3> <br>
                 First and Last Name*: <br> <input type="text" id="firstName" name="Name" required><br>
                 Age*: <br> <input type="number" name="Age" required><br>
-                Weight* (lbs): <br> <input type="number" name="Weight" required><br>
-                Height* (in): <br> <input type="number" name="Height"  required><br>
+                Weight* : <br><input type="number" name="Weight" style="width: 200px; margin-left: 50px; padding-right: 100px;" required>
+                <select name="wMetric">
+                    <option value="pounds">lbs</option>
+                    <option value="kilos">kgs</option>
+                </select><br>
+                Height*: <br> <input type="number" name="Height" style="width: 200px; margin-left: 75px; padding-right: 100px;" required>
+                <select name="hMetric">
+                    <option value="inches">inches</option>
+                    <option value="meters">meters</option>
+                </select><br>
                 Gender*:<br>
                 <input type="radio" name="gender"  value="male" required> Male<br>
                 <input type="radio" name="gender" value="female"> Female<br>
