@@ -125,9 +125,9 @@
 
             <img class="img-responsive img-rounded" alt="Where's Waldo" src="Waldo.jpg" usemap="#mapWaldo">
 
-            <map name="mapWaldo">
+           <!-- <map name="mapWaldo">
                 <area alt="Waldo" title="Waldo" href="audiotest.html" shape="rect" coords="486,260,532,319" />
-            </map>
+            </map>-->
             <!--<p id="log"></p> -->
         </div>
 
@@ -228,7 +228,7 @@
         if (countdown <= 0) {
             clearInterval(x);
             setTimeout(function(){
-                window.location.href = 'audiotest.html';
+                window.location.href = 'End.html';
             },1000);
         }
             //document.getElementById("countdown").innerHTML = "EXPIRED";

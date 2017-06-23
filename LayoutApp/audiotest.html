@@ -80,16 +80,16 @@
         <p lang="es">Favor de seguir los siguentes pasos: </p>
         <ol>
             <li lang="en">Place the phone next to your ear as if you're making a phone call</li>
-            <li lang="en">Listen for the magic code</li>
+            <li lang="en">Listen for the countdown</li>
             <li lang="es">Coloque su telefono en su odio, como si estuviera haciendo una llamada</li>
-            <li lang="es">Escuche para obtener el código secreto</li>
+            <li lang="es">Escuche para el conteo regresivo</li>
             <!--<li>To start the test Press the "Begin in 5 Seconds" button</li>
             <li>You have 5 seconds to place your phone, on one of the six positions</li>
             <li>Begin to walk, until you phone beep. Make sure the volume of the phone is laud.</li>
             <li>Enjoy</li>-->
         </ol>
-        <input type="button" class="btn btn-primary btn-xl" value="Begin in 5 Seconds" lang="en" onclick="play()">
-        <input type="button" class="btn btn-primary btn-xl" value="Comenzar en 5 Segundos" lang="es" onclick="play()">
+        <input type="button" id="pbtn1" class="btn btn-primary btn-xl" value="Begin in 5 Seconds" lang="en" onclick="play()">
+        <input type="button" id="pbtn2" class="btn btn-primary btn-xl" value="Comenzar en 5 Segundos" lang="es" onclick="play()">
         <h1 id="countdown"></h1>
     </section>
 
@@ -128,6 +128,8 @@
         var audio = document.getElementById("my-audio");
         audio.play();
         audio.pause();
+        document.getElementById("pbtn1").disabled = true;
+        document.getElementById("pbtn2").disabled = true
         var firstName = localStorage.getItem("firstName");
         var position = localStorage.getItem("position");
         //document.getElementById("name").innerHTML = firstName;
@@ -204,7 +206,7 @@
             });
 
             setTimeout(function () {
-                window.location.href = "End.html";
+                window.location.href = "instructions2.html";
             },10000);
         },5000);
     }
