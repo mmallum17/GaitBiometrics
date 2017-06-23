@@ -1,3 +1,3 @@
 <?php
-    header( 'Location: /LayoutApp/index.html' ) ;
+    header( 'Location: /LayoutApp/language.html' ) ;
 ?>
