@@ -18,6 +18,14 @@ $age = $_POST["Age"];
 $weight = $_POST["Weight"];
 $height = $_POST["Height"];
 $gender = $_POST["gender"];
+$wMetric = $_POST["wMetric"];
+$hMetric = $_POST["hMetric"];
+if($wMetric == "kilos") {
+    $weight *= 2.20462;
+}
+if($hMetric == "meters") {
+    $height *= 39.3701;
+}
 //$userName = $_POST["Name"];
 //$laterality = $_POST["Laterality"];
 
