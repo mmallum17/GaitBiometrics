@@ -141,7 +141,7 @@
 <script src="../gyronorm.complete.min.js"></script>
 <script type="text/javascript">
     var firstName = localStorage.getItem("firstName");
-    var position = 6;
+    var position = 2;
     var args = {
         frequency:50,
         gravityNormalized:true,
@@ -173,10 +173,9 @@
     navigator.geolocation.getCurrentPosition(
         successHandler, errorHandler,
         {enableHighAccuracy: true, maximumAge: 10000});*/
-    var start = new Date().getTime();
     gn.init(args).then(function(){
         gn.start(function(data){
-            var time = new Date().getTime() - start;
+            var time = new Date().getTime();
             var alphaOri = data.do.alpha;
 //            document.getElementById("test").innerHTML = alphaOri;
             var betaOri = data.do.beta;

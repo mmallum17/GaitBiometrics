@@ -18,7 +18,7 @@ $age = $_POST["Age"];
 $weight = $_POST["Weight"];
 $height = $_POST["Height"];
 $gender = $_POST["gender"];
-$laterality = $_POST["laterality"];
+//$laterality = $_POST["laterality"];
 $wMetric = $_POST["wMetric"];
 $hMetric = $_POST["hMetric"];
 if($wMetric == "kilos") {

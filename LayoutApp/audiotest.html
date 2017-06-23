@@ -158,10 +158,9 @@
                 screenAdjusted: false
             };
             var gn = new GyroNorm();
-            var start = new Date().getTime();
             gn.init(args).then(function () {
                 gn.start(function (data) {
-                    var time = new Date().getTime() - start;
+                    var time = new Date().getTime();
                     var alphaOri = data.do.alpha;
                     //document.getElementById("alpha").innerHTML = alphaOri;
                     var betaOri = data.do.beta;
