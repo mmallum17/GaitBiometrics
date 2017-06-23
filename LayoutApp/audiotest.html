@@ -98,7 +98,7 @@
 
 
 <!--Hi <h1 id="name"></h1>-->
-<h1 id="messageErr"></h1>
+<!--<h1 id="messageErr"></h1>-->
 <audio id="my-audio" src="audio/countdown10.wav">
 </audio>
 <!--<audio id="player"></audio>
@@ -193,7 +193,7 @@
                     }
                     xmlhttp.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
-                            document.getElementById("messageErr").innerHTML = this.responseText;
+                            //document.getElementById("messageErr").innerHTML = this.responseText;
                         }
                     };
                     xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&fName=" + firstName + "&time=" + time + "&position=" + position, true);
