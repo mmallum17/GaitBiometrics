@@ -132,8 +132,8 @@
                 <input type="radio" name="gender" value="female"> Female<br>
                 <input type="radio" name="gender" value="other"> Other<br>
                 Laterality*: <br>
-                <input type="radio" name="laterality"  value="right" > Right<br>
-                <input type="radio" name="laterality" value="left"> Left<br>
+                <input type="radio" id="right" name="laterality"  value="right" > Right<br>
+                <input type="radio" id="left" name="laterality" value="left"> Left<br>
 
 
                 <!--<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.-->
@@ -159,7 +159,13 @@
 <script type="text/javascript">
     function store(){
         var fName = document.getElementById("firstName");
-        localStorage.setItem("firstName", fName.value)
+        localStorage.setItem("firstName", fName.value);
+        if (document.getElementById('right').checked) {
+            localStorage.setItem("position", 0)
+        }
+        else if(document.getElementById('left').checked) {
+            localStorage.setItem("position", 1)
+        }
     }
 </script>
 
