@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <span title="Spanish"><a lang="es" href="qa-html-language-declarations.es">Español</a></span>
 
 <head>
@@ -55,10 +55,12 @@
         <div class="collapse navbar-collapse" id="navbarExample">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html#about">Home</a>
+                    <a class="nav-link" class="trn" href="#about" lang="en">Home</a>
+                    <a class="nav-link" class="trn" href="#about" lang="es">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html#contact">Contact</a>
+                    <a class="nav-link" href="#contact" lang="en">Contact</a>
+                    <a class="nav-link" href="#contact" lang="es">Contactos</a>
                 </li>
             </ul>
         </div>
@@ -73,18 +75,23 @@
 <header class="masthead">
     <div class="header-content">
         <div class="header-content-inner">
-            <h1>Instructions - Test #2 </h1><br>
+            <h1 lang="en">Instructions - Test #2 </h1><br>
+            <h1 lang="es">Instrucciones - Prueba #2 </h1><br>
 
             <ol>
 
-                <li>Grab your phone with both hands</li>
-                <li>You have 20 seconds to walk and find 'Where is Waldo'</li>
-                <li>Click 'Start' button to begin.</li>
+                <li lang="en">Grab your phone with both hands</li>
+                <li lang="en">You have 20 seconds to walk and find 'Where is Waldo'</li>
+                <li lang="en">Click 'Start' button to begin.</li>
+                <li lang="es">Agarre su telefono con ambas manos </li>
+                <li lang="es">Tendrás 20 segundos para encontrar a Waldo</li>
+                <li lang="es">Presione el botón de "Comenzar".</li>
             </ol>
         </div>
 
         <br>
-        <a type="submit" class="btn btn-primary btn-xl" href="test2.html">Start</a>
+        <button type="submit" class="btn btn-primary btn-xl"   href="test2.html" value="Submit" lang="en">Start</button>
+        <button type="submit" class="btn btn-primary btn-xl"  href="test2.html" value="Submit" lang="es">Comenzar</button>
         <!--<a class="btn btn-primary btn-xl" href="App.html">Submit</a>-->
 
     </div>
@@ -99,13 +106,6 @@
 </script>
 
 
-<!--translate-->
-<div id="google_translate_element"></div><script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
-    }
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
@@ -119,6 +119,7 @@
 
 <!-- Custom scripts for this template -->
 <script src="js/creative.min.js"></script>
+<script src="jquery.translate.js"></script>
 
 </body>
 
