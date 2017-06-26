@@ -25,7 +25,7 @@ if($wMetric == "kilos") {
     $weight *= 2.20462;
 }
 if($hMetric == "meters") {
-    $height *= 39.3701;
+    $height *= .393701;
 }
 //$userName = $_POST["Name"];
 //$laterality = $_POST["Laterality"];
