@@ -29,9 +29,10 @@ $IP = $_SERVER['REMOTE_ADDR'];
 
 $query = "INSERT INTO user_info(age, weight, height, gender,user_name,ip_address) VALUES($age, $weight, $height, '$gender','$userName', '$IP')";
 $result = pg_query($pg_conn, $query);
-$query = "SELECT currval(pg_get_serial_sequence('user_info','id'))";
-$result = pg_query($pg_conn, $query);
-$id = $result;
+$oid = pg_last_oid($result);
+/*$query = "SELECT user_info currval(pg_get_serial_sequence('user_info','id'))";
+$result = pg_query($pg_conn, $query);*/
+$id = $oid;
 if (!$result) {
     $errormessage = pg_last_error();
     echo "Error with query: " . $errormessage;
