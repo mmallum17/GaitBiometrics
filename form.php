@@ -27,11 +27,11 @@ $IP = $_SERVER['REMOTE_ADDR'];
 
 //print $name . " " . $age . " " . $weight . " " . $height . " " . $gender;
 
-$query = "INSERT INTO user_info(age, weight, height, gender,user_name,ip_address) VALUES($age, $weight, $height, '$gender','$userName', '$IP')";
+$query = "INSERT INTO user_info(age, weight, height, gender,user_name,ip_address) VALUES($age, $weight, $height, '$gender','$userName', '$IP') returning id";
 $result = pg_query($pg_conn, $query);
 //$oid = pg_last_oid($result);
-$query = "SELECT currval(pg_get_serial_sequence('user_info','id'))";
-$result = pg_query($pg_conn, $query);
+//$query = "SELECT currval(pg_get_serial_sequence('user_info','id'))";
+//$result = pg_query($pg_conn, $query);
 $id = $result;
 if (!$result) {
     $errormessage = pg_last_error();
