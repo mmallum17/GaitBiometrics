@@ -19,14 +19,6 @@ $weight = $_POST["Weight"];
 $height = $_POST["Height"];
 $gender = $_POST["gender"];
 //$laterality = $_POST["laterality"];
-$wMetric = $_POST["wMetric"];
-$hMetric = $_POST["hMetric"];
-if($wMetric == "kilos") {
-    $weight *= 2.20462;
-}
-if($hMetric == "meters") {
-    $height *= .393701;
-}
 
 $IP = $_SERVER['REMOTE_ADDR'];
 //$userName = $_POST["Name"];
