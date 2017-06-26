@@ -26,7 +26,7 @@ $IP = $_SERVER['REMOTE_ADDR'];
 
 //print $name . " " . $age . " " . $weight . " " . $height . " " . $gender;
 
-$query = "INSERT INTO user_info(age, weight, height, gender,user_name,ip_address) VALUES($age, $weight, $height, '$gender','$userName', '$IP')";
+$query = "INSERT INTO user_info(age, weight, height, gender,user_name,ip_address) VALUES($age, $weight, $height, '$gender','$userName', '$IP') RETURNING id";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
@@ -34,3 +34,7 @@ if (!$result) {
     exit();
 }
 ?>
+
+<script type="text/javascript">
+    localStorage.setItem("id", "<?php echo $result ?>");
+</script>

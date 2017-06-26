@@ -130,6 +130,7 @@
             </map>-->
             <!--<p id="log"></p> -->
         </div>
+        <h1 id="messageAcc"></h1>
 
 
 
@@ -139,7 +140,7 @@
 
 <script src="../gyronorm.complete.min.js"></script>
 <script type="text/javascript">
-    var firstName = localStorage.getItem("firstName");
+    var id = localStorage.getItem("id");
     var position = 2;
     var args = {
         frequency:50,
@@ -204,10 +205,10 @@
             }
             xmlhttp2.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-//                    document.getElementById("messageAcc").innerHTML = this.responseText;
+                    document.getElementById("messageAcc").innerHTML = this.responseText;
                 }
             };
-            xmlhttp2.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&fName=" + firstName + "&time=" + time + "&position=" + position, true);
+            xmlhttp2.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&time=" + time + "&position=" + position + "&id=" + id, true);
             xmlhttp2.send();
         });
     }).catch(function(e){

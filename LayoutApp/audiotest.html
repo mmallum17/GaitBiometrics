@@ -95,7 +95,7 @@
         <!--</ol>-->
         <input type="button" id="pbtn1" class="btn btn-primary btn-xl" value="Begin in 5 Seconds" lang="en" onclick="play()">
         <input type="button" id="pbtn2" class="btn btn-primary btn-xl" value="Comenzar en 5 Segundos" lang="es" onclick="play()">
-        <h1 id="ready"></h1>
+        <h1 id="messageErr"></h1>
         <h1 lang="en" id="countdownEN"></h1>
         <h1 lang="es" id="countdownES"></h1>
 
@@ -143,7 +143,7 @@
         audio.pause();
         document.getElementById("pbtn1").disabled = true;
         document.getElementById("pbtn2").disabled = true;
-        var firstName = localStorage.getItem("firstName");
+        var id = localStorage.getItem("id");
         var position = localStorage.getItem("position");
         //document.getElementById("name").innerHTML = firstName;
 
@@ -208,10 +208,10 @@
                     }
                     xmlhttp.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
-                            //document.getElementById("messageErr").innerHTML = this.responseText;
+                            document.getElementById("messageErr").innerHTML = this.responseText;
                         }
                     };
-                    xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&fName=" + firstName + "&time=" + time + "&position=" + position, true);
+                    xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&time=" + time + "&position=" + position + "&id=" + id, true);
                     xmlhttp.send();
                 });
             }).catch(function (e) {
