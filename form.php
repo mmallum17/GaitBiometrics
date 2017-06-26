@@ -29,11 +29,12 @@ $IP = $_SERVER['REMOTE_ADDR'];
 
 $query = "INSERT INTO user_info(age, weight, height, gender,user_name,ip_address) VALUES($age, $weight, $height, '$gender','$userName', '$IP') RETURNING id";
 $result = pg_query($pg_conn, $query);
+$id = $result;
 if (!$result) {
     $errormessage = pg_last_error();
     echo "Error with query: " . $errormessage;
     exit();
 }
-$_SESSION['id'] = $result;
+$_SESSION['id'] = 5;
 ?>
 
