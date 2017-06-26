@@ -95,6 +95,7 @@
         <!--</ol>-->
         <input type="button" id="pbtn1" class="btn btn-primary btn-xl" value="Begin in 5 Seconds" lang="en" onclick="play()">
         <input type="button" id="pbtn2" class="btn btn-primary btn-xl" value="Comenzar en 5 Segundos" lang="es" onclick="play()">
+        <h1 id="ready"></h1>
         <h1 id="countdown"></h1>
     </section>
 
@@ -131,6 +132,12 @@
     //var audio = new Audio('audio/beep-01a.wav')
     function play() {
         var audio = document.getElementById("my-audio");
+        var ready = 0;
+        readyText = document.getElementById("ready");
+        while (ready != 4){
+         ready = audio.readyState;
+         readyText.innerHTML = ready;
+        }
         audio.play();
         audio.pause();
         document.getElementById("pbtn1").disabled = true;
