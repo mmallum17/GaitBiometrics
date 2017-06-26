@@ -26,7 +26,7 @@ $IP = $_SERVER['REMOTE_ADDR'];
 
 //print $name . " " . $age . " " . $weight . " " . $height . " " . $gender;
 
-$query = "INSERT INTO user_info(age, weight, height, gender,user_name,ip) VALUES($age, $weight, $height, '$gender','$userName', '$IP')";
+$query = "INSERT INTO user_info(age, weight, height, gender,user_name,ip_address) VALUES($age, $weight, $height, '$gender','$userName', '$IP')";
 $result = pg_query($pg_conn, $query);
 if (!$result) {
     $errormessage = pg_last_error();
