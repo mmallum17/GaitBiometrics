@@ -33,6 +33,10 @@ $result = pg_query($pg_conn, $query);
 //$query = "SELECT currval(pg_get_serial_sequence('user_info','id'))";
 //$result = pg_query($pg_conn, $query);
 $id = $result;
+while ($row = pg_fetch_row($result)) {
+    $user_id = $row[0];
+    echo $user_id . '<br/>';
+}
 print $id;
 if (!$result) {
     $errormessage = pg_last_error();
