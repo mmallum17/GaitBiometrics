@@ -27,7 +27,9 @@ $IP = $_SERVER['REMOTE_ADDR'];
 
 //print $name . " " . $age . " " . $weight . " " . $height . " " . $gender;
 
-$query = "INSERT INTO user_info(age, weight, height, gender,user_name,ip_address) VALUES($age, $weight, $height, '$gender','$userName', '$IP') RETURNING id";
+$query = "INSERT INTO user_info(age, weight, height, gender,user_name,ip_address) VALUES($age, $weight, $height, '$gender','$userName', '$IP')";
+$result = pg_query($pg_conn, $query);
+$query = "SELECT currval('id')";
 $result = pg_query($pg_conn, $query);
 $id = $result;
 if (!$result) {
@@ -35,6 +37,6 @@ if (!$result) {
     echo "Error with query: " . $errormessage;
     exit();
 }
-$_SESSION['id'] = 5;
+$_SESSION['id'] = $id;
 ?>
 
