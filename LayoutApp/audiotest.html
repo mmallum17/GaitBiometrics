@@ -79,7 +79,7 @@
         <ul>
             <li lang="en">Follow this next steps: </li>
             <li lang="es">Empieze a Caminar en linea recta</li>
-            <li lang="en">Put the phone next to your ear  as you where in a phone call, keep walking, while you lisent to the cout down. </li>
+            <li lang="en">Put the phone next to your ear  as you where in a phone call, keep walking, while you listen to the countdown. </li>
             <li lang = "es">Colocque el teléfono en tu oído como si estuvieses hablando por teléfono y, sin dejar de caminar, escuche la cuenta atrás</li>
 
         </ul>
@@ -96,7 +96,9 @@
         <input type="button" id="pbtn1" class="btn btn-primary btn-xl" value="Begin in 5 Seconds" lang="en" onclick="play()">
         <input type="button" id="pbtn2" class="btn btn-primary btn-xl" value="Comenzar en 5 Segundos" lang="es" onclick="play()">
         <h1 id="ready"></h1>
-        <h1 id="countdown"></h1>
+        <h1 lang="en" id="countdownEN"></h1>
+        <h1 lang="es" id="countdownES"></h1>
+
     </section>
 
 </header>
@@ -151,7 +153,9 @@
         var x = setInterval(function() {
             countdown--;
             // Display the result in the element with id="demo"
-            document.getElementById("countdown").innerHTML = countdown + " s Left";
+            document.getElementById("countdownEN").innerHTML = "Begin in " + countdown + " s";
+            document.getElementById("countdownES").innerHTML = "Comenzar en " + countdown + " s";
+
 
             // If the count down is finished, write some text
             if (countdown <= 0) {
