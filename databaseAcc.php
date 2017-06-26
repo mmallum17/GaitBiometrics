@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 function pg_connection_string_from_database_url() {
     $user = "fnfgduxoqaonjm";
     $pass = "3a5ef4d082610ea1f9f88d557ae503cb2cb7d5dd5eb97f5c9c0c23a7c0ddf15a";
@@ -26,7 +27,7 @@ $alphaOri = $_GET['alphaOri'];
 $betaOri = $_GET['betaOri'];
 $gammaOri = $_GET['gammaOri'];
 //Name
-$id = $_GET['id'];
+$id = $_SESSION['id'];
 $time_data = $_GET['time'];
 $pos = $_GET['position'];
 # Now let's use the connection for something silly just to prove it works:

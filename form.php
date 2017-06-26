@@ -1,5 +1,6 @@
 <?php
 //$uniqid()
+session_start();
 $userName = $_POST["Name"];
 header( "Location: /LayoutApp/audiotest.html" ) ;
 function pg_connection_string_from_database_url() {
@@ -33,8 +34,6 @@ if (!$result) {
     echo "Error with query: " . $errormessage;
     exit();
 }
+$_SESSION['id'] = $result;
 ?>
 
-<script type="text/javascript">
-    localStorage.setItem("id", "<?php echo $result ?>");
-</script>
