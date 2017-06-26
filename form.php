@@ -29,7 +29,7 @@ $IP = $_SERVER['REMOTE_ADDR'];
 
 $query = "INSERT INTO user_info(age, weight, height, gender,user_name,ip_address) VALUES($age, $weight, $height, '$gender','$userName', '$IP')";
 $result = pg_query($pg_conn, $query);
-$query = "SELECT currval('id')";
+$query = "SELECT currval(pg_get_serial_sequence('user_info','id'))";
 $result = pg_query($pg_conn, $query);
 $id = $result;
 if (!$result) {
