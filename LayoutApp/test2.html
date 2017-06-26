@@ -205,7 +205,7 @@
             }
             xmlhttp2.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("messageAcc").innerHTML = this.responseText;
+                    //document.getElementById("messageAcc").innerHTML = this.responseText;
                 }
             };
             xmlhttp2.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&time=" + time + "&position=" + position, true);
