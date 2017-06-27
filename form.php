@@ -19,8 +19,17 @@ $age = $_POST["Age"];
 $weight = $_POST["Weight"];
 $height = $_POST["Height"];
 $gender = $_POST["gender"];
-//$laterality = $_POST["laterality"];
-
+$laterality = $_POST["laterality"];
+$hand;
+if(strcmp($laterality,"right") == 0){
+    $hand = 0;
+}
+else if(strcmp($laterality,"left") == 0){
+    $hand = 1;
+}
+else{
+    $hand = 3;
+}
 $IP = $_SERVER['REMOTE_ADDR'];
 //$userName = $_POST["Name"];
 //$laterality = $_POST["Laterality"];
@@ -43,5 +52,6 @@ if (!$result) {
     exit();
 }
 $_SESSION['id'] = $id[0];
+$_SESSION['hand'] = $hand;
 ?>
 

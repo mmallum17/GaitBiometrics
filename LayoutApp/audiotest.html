@@ -144,7 +144,7 @@
         document.getElementById("pbtn1").disabled = true;
         document.getElementById("pbtn2").disabled = true;
         //var id = localStorage.getItem("id");
-        var position = localStorage.getItem("position");
+        //var position = localStorage.getItem("position");
         //document.getElementById("name").innerHTML = firstName;
 
         var countdown = 5;
@@ -211,7 +211,7 @@
                             document.getElementById("messageErr").innerHTML = this.responseText;
                         }
                     };
-                    xmlhttp.open("GET", "../databaseAcc.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&time=" + time + "&position=" + position, true);
+                    xmlhttp.open("GET", "../test1_db.php?accX=" + accX + "&accY=" + accY + "&accZ=" + accZ + "&alphaAcc=" + alphaAcc + "&betaAcc=" + betaAcc + "&gammaAcc=" + gammaAcc + "&alphaOri=" + alphaOri + "&betaOri=" + betaOri + "&gammaOri=" + gammaOri + "&time=" + time, true);
                     xmlhttp.send();
                 });
             }).catch(function (e) {
