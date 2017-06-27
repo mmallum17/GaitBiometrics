@@ -161,13 +161,16 @@
 
 <script type="text/javascript">
     function store(){
-        var fName = document.getElementById("firstName");
-        localStorage.setItem("firstName", fName.value);
-        if (document.getElementById('right').checked) {
+        //var fName = document.getElementById("firstName");
+        //localStorage.setItem("firstName", fName.value);
+        if (document.getElementById('right').checked ==  true) {
             localStorage.setItem("position", 0)
         }
-        else if(document.getElementById('left').checked) {
+        else if(document.getElementById('left').checked == true) {
             localStorage.setItem("position", 1)
+        }
+        else{
+            localStorage.setItem("position", 3)
         }
     }
 </script>
